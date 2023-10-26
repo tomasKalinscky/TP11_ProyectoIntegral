@@ -4,18 +4,15 @@ public class Libros{
     public int FKAutor {get; set;}
     public int FKGenero {get; set;}
     public date FechaDePublicacion {get; set;}
-    public string Vendedor {get; set;}
-    public string Libro {get; set;}
-    
-    public Historial(){
+    public string Descripcion {get; set;}
+    public Libros(){
 
     }
-    public Historial(int IDHistorial = 0,int IDPrestamo = 0,int IDUsuario =0,date Fecha = null,string Vendedor = "",string Libro = ""){
-        this.IDHistorial = IDHistorial;
-        this.IDPrestamo = IDPrestamo;
-        this.IDUsuario = IDUsuario;
-        this.Fecha = Fecha;
-        this.Vendedor = Vendedor;
-        this.Libro = Libro;
+    public Libros(int IDLibro = 0,int FKAutor = 0,int FKGenero =0,date FechaDePublicacion = null,string Descripcion = ""){
+        this.IDLibro = IDLibro;
+        this.FKAutor = FKAutor;
+        this.FKGenero = FKGenero;
+        this.FechaDePublicacion = FechaDePublicacion;
+        this.Descripcion = Descripcion;
     }
 }
