@@ -1,0 +1,15 @@
+create procedure listarLibros
+as
+begin
+select * from Libro
+end
+
+
+
+create procedure SP_login
+@pusername nvarchar(50) ,
+@pcontraseña nvarchar(50)
+as
+begin
+SELECT * FROM usuario where username = @pusername AND contraseña = @pcontraseña
+end
