@@ -11,20 +11,20 @@ public static class BD
 
     public static Libro DetalleLibro(int IDLibro){
         Libro libro;
-        using (SqlConnection db = New SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * from Libro where IDLibro = pIDLibro";
-            libro = db.QueryFirstOrDefault<Libro>(sql,new {pIDLibro = IDLibro})
+            libro = db.QueryFirstOrDefault<Libro>(sql,new {pIDLibro = IDLibro});
         }
         return libro;
     }
     public static List<Libro> libros = new List<Libro>();
     public static List<Libro> ListarLibros(){
         List<Libro> libros;
-        using (SqlConnection db = New SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * from Libro";
-            libro = db.Query<Libro>(sql)
+            libros = db.Query<Libro>(sql).ToList();
         }
         return libros;
     }
@@ -42,7 +42,7 @@ public static class BD
             string sql = "SELECT * FROM Usuario where NombreUsuario = @pusername AND Contraseña = @pcontraseña";
             broder = db.QueryFirstOrDefault<Usuario>(sql, new {pusername = username, pcontraseña = contraseña});
         }
-        if (broder != null && !string.IsNullOrEmpty(broder.UserName)) {
+        if (broder != null && !string.IsNullOrEmpty(broder.NombreUsuario)) {
         return true; 
     } else {
         return false; 

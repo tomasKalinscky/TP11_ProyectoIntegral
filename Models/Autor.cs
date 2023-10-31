@@ -7,7 +7,7 @@ public class Autor{
     public Autor(){
 
     }
-    public Autor(int IDAutor = 0, string Biografia = ' ', string Nombre = ""){
+    public Autor(int IDAutor = 0, string Biografia = " ", string Nombre = ""){
         this.IDAutor = IDAutor;
         this.Nombre = Nombre;
         this.Biografia = Biografia;

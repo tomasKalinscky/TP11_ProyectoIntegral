@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\47433817\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj": {}
+    "Z:\\Ort 2023\\Program2023\\TP11\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj": {}
   },
   "projects": {
-    "C:\\Users\\47433817\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj": {
+    "Z:\\Ort 2023\\Program2023\\TP11\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\47433817\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj",
+        "projectUniqueName": "Z:\\Ort 2023\\Program2023\\TP11\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj",
         "projectName": "TP11_ProyectoIntegral",
-        "projectPath": "C:\\Users\\47433817\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj",
-        "packagesPath": "C:\\Users\\47433817\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\47433817\\TP11_ProyectoIntegral\\obj\\",
+        "projectPath": "Z:\\Ort 2023\\Program2023\\TP11\\TP11_ProyectoIntegral\\TP11_ProyectoIntegral.csproj",
+        "packagesPath": "C:\\Users\\47963062\\.nuget\\packages\\",
+        "outputPath": "Z:\\Ort 2023\\Program2023\\TP11\\TP11_ProyectoIntegral\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\47433817\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\47963062\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
