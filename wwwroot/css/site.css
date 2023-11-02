@@ -19,32 +19,6 @@ html {
 
 body {
   margin-bottom: 60px;
-}
-body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
-}
-
-header {
-  background-color: #007BFF;
-  color: #fff;
-  padding: 20px;
-}
-
-h1 {
-  font-size: 2rem;
-}
-
-button {
-  background-color: #007BFF;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-top: 20px;
+  height: 100vh;
+  background-color: grey;
 }
