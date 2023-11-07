@@ -11,11 +11,11 @@
     <link rel="shortcut icon" href="/casita_del_logo_(sin_fondo).png" />
 </head>
 <body style="background-color:grey">
-<header style="background-color:black">
+<header style="background-color:black" style="height:5%">
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid" >
+  <div class="container-fluid">
   <div style="width: 15%; height: 10%">
-    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="logo_bookhook_sin_fondo.png" style="width: 100%; height: 100%" > </a>
+    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/Fotos/logo_bookhook_sin_fondo.png" style="width: 100%; height: 100%" > </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -38,10 +38,11 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Creditos">Creditos</a>
         </li>
         
       </ul>
+      
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
@@ -79,7 +80,15 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        
+        <div>
+            <nav class="Navegador" >
+                <a href="https://www.facebook.com/museedulouvre/"><img src="/Fotos/Facebook.png"></a>
+                <a href="https://twitter.com/MuseeLouvre"><img src="/Fotos/Twitter.png"></a>
+                <a href="https://www.instagram.com/museelouvre/"><img src="/Fotos/Instagram.png"></a>
+                <p>&copy; 2023 Pagina oficial de BookHook inc. Todos los derechos reservados.
+                </p>
+            </nav>
+        </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

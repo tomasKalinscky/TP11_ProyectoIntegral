@@ -22,3 +22,43 @@ body {
   height: 100vh;
   background-color: grey;
 }
+.creditos{
+  float: left;
+  width: 28%;
+  margin: 1%;
+}
+.creditos img {
+  width: 100%;
+}
+footer {
+  background-color: #272727b6;;
+  border-top: 3px solid #000000;
+  color: #bebebeb6;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  clear: both;
+  padding: 0px;
+}
+
+footer div {
+  display: flex;
+  align-items: center;
+}
+
+footer div img {
+  height: 10%;
+  width: 10%;
+}
+
+
+footer div a {
+  color: #929292;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline;
+}
