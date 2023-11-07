@@ -1,15 +1,11 @@
-create procedure listarLibros
+create procedure BuscarLibrosPorTexto
+@texto nvarchar(50)
 as
 begin
-select * from Libro
-end
-
-
-
-create procedure SP_login
-@pusername nvarchar(50) ,
-@pcontraseña nvarchar(50)
-as
-begin
-SELECT * FROM usuario where username = @pusername AND contraseña = @pcontraseña
+select * 
+from Libro
+inner join Autor A on A.IDAutor = Libro.FKAutor
+where Libro.Titulo like '%' + @texto + '%' 
+or Libro.Descripcion like '%' + @texto + '%' 
+or A.Nombre like '%' + @texto + '%'
 end
