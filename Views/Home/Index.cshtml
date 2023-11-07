@@ -5,6 +5,15 @@
     <h1>Bienvenido a la Biblioteca Virtual</h1>
     <p>Encuentra y disfruta de libros electrónicos en línea</p>
 </header>
-<!-- @foreach()
+@foreach(var item in ViewBag.Libros){
+    <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">@item.Titulo</h5>
+    <p class="card-text">@item.Descripcion</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+}
 
 
