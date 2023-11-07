@@ -8,23 +8,15 @@ namespace TP11_ProyectoIntegral.Models;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
-
-    public static Libro DetalleLibro(int IDLibro){
-        Libro libro;
+    
+    public static List<Libro> ListarLibrosYFiltros(int IdAutor = null, int IdGenero = null){
+        List<Libro> libros = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * from Libro where IDLibro = pIDLibro";
-            libro = db.QueryFirstOrDefault<Libro>(sql,new {pIDLibro = IDLibro});
-        }
-        return libro;
-    }
-    public static List<Libro> libros = new List<Libro>();
-    public static List<Libro> ListarLibros(){
-        List<Libro> libros;
-        using (SqlConnection db = new SqlConnection(_connectionString))
-        {
-            string sql = "SELECT * from Libro";
-            libros = db.Query<Libro>(sql).ToList();
+            
+            string sql = "SP_Libros";
+            libros = db.Query<Libro>(sql, new{pAutor = IdAutor, pGenero = IdGenero},
+                    commandType: CommandType.StroredProcedure).ToList();
         }
         return libros;
     }
