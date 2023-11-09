@@ -42,3 +42,10 @@
 	Insert Into Historial (FKCompra,FKUsuario,Fecha,FKLibro) values (@pcompra,@pusuario,@pfecha,@plibro)
 	End
 
+	Create Procedure SP_DetalleLibro
+	@pidlibro int
+	As
+	Begin
+	Select * From Libro Where Libro.IDLibro = @pidlibro;
+	End
+

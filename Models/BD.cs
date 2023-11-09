@@ -48,4 +48,14 @@ public static class BD
         }
         return n != 0;
     }
+    public static Libro DetalleLibro(int idlibro){
+        Libro libro = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SP_DetalleLibro";
+            libro = db.QueryFirstOrDefault<Libro>(sql, new{pidlibro = idlibro},
+                    commandType: System.Data.CommandType.StoredProcedure);
+        }
+        return libro;
+    }
 }
