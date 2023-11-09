@@ -9,14 +9,14 @@ public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
     
-    public static List<Libro> ListarLibrosYFiltros(int IdAutor = null, int IdGenero = null){
+    public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
         List<Libro> libros = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             
             string sql = "SP_Libros";
             libros = db.Query<Libro>(sql, new{pAutor = IdAutor, pGenero = IdGenero},
-                    commandType: CommandType.StroredProcedure).ToList();
+                    commandType: System.Data.CommandType.StoredProcedure).ToList();
         }
         return libros;
     }

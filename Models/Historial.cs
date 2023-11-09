@@ -13,7 +13,7 @@ public class Historial{
     public Historial(int IDHistorial = 0,int IDPrestamo = 0,int IDUsuario =0,DateOnly Fecha = new DateOnly (),string Vendedor = "",string Libro = ""){
         this.IDHistorial = IDHistorial;
         this.IDPrestamo = IDPrestamo;
-        this.IDUsuario = IDUsuario;
+        this.Usuario = IDUsuario;
         this.Fecha = Fecha;
         this.Vendedor = Vendedor;
         this.Libro = Libro;

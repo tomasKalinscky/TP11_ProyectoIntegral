@@ -6,7 +6,7 @@ public class Libro{
     public DateOnly FechaDePublicacion {get; set;}
     public string Descripcion {get; set;}
     public int Stock {get; set;}
-    public int Foto {get; set;}
+    public string Foto {get; set;}
     public Libro(){
 
     }
