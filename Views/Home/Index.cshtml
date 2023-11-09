@@ -6,10 +6,9 @@
     <div class="card" style="display: inline-block; width: 18rem;">
         <img src="@item.Foto" class="card-img-top" alt="...">
         <div class="card-body">
-            <h5 class="card-title">@item.Nombre</h5>
-            <button type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarTemporadas(@item.IdSerie)">Temporadas</button>
-            <button type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarActores(@item.IdSerie)">Actores</button>
-            <button type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoSerie(@item.IdSerie)">Info Serie</button>
+            <h5 class="card-title">@item.Titulo</h5>
+            <button type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IdLibro)">Ver detalle del Libro</button>
+            <button type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
         </div>
     </div>
 }

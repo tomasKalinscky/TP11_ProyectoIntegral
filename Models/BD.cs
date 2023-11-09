@@ -14,7 +14,7 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             
-            string sql = "SP_Libros";
+            string sql = "SP_FiltrosLibros";
             libros = db.Query<Libro>(sql, new{pAutor = IdAutor, pGenero = IdGenero},
                     commandType: System.Data.CommandType.StoredProcedure).ToList();
         }

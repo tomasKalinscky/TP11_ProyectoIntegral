@@ -9,13 +9,13 @@ public class DetalleCompra{
     public DetalleCompra(){
 
     }
-    public DetalleCompra(int IDPrestamo = 0,int FKLibro = 0,int FKUsuario =0, DateOnly FechaPrestamo = new DateOnly() , DateOnly FechaVencimiento = new DateOnly() ,string EstadoPrestamo = ""){
-        this.IDPrestamo = IDPrestamo;
-        this.FKLibro = FKLibro;
-        this.FKUsuario = FKUsuario;
-        this.FechaPrestamo = FechaPrestamo;
-        this.FechaVencimiento = FechaVencimiento;
-        this.EstadoPrestamo = EstadoPrestamo;
+    public DetalleCompra(int IDCompra  = 0,int IDLibro = 0,int IDUsuario =0, DateTime FechaYHora = new DateTime() ,int FKMetodoPago = 0,float Precio = 0){
+        this.IDCompra = IDCompra;
+        this.IDLibro = IDLibro;
+        this.IDUsuario = IDUsuario;
+        this.FechaYHora = FechaYHora;
+        this.FKMetodoPago = FKMetodoPago;
+        this.Precio = Precio;
 
     }
 }
