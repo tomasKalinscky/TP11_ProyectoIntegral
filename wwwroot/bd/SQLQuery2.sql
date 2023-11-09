@@ -42,4 +42,3 @@
 	Insert Into Historial (FKCompra,FKUsuario,Fecha,FKLibro) values (@pcompra,@pusuario,@pfecha,@plibro)
 	End
 
-
