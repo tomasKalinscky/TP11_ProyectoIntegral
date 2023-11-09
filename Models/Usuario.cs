@@ -14,6 +14,5 @@ public class Usuario{
         this.Contraseña = Contraseña;
         this.Gmail = Gmail;
         this.Telefono = Telefono;
-
     }
 }
