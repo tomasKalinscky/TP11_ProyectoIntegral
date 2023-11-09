@@ -18,6 +18,7 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
+        ViewBag.Libros = BD.ListarLibrosYFiltros();
         return View();
     }
 
