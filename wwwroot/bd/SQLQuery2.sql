@@ -2,7 +2,10 @@
 		@pAutor int, @pGenero int
 	AS
 	Begin
-	Select * from Libro Where (@pAutor IS NULL Or @pAutor = FKAutor)
+	Select L.IDLibro,L.Titulo,L.Imagen,Autor.Nombre AS 'NombreAutor',L.Descripcion,Genero.Nombre AS 'Genero' from Libro L
+	Inner Join Autor On L.FKAutor = Autor.IDAutor
+	Inner Join Genero On Genero.IDGenero = L.FKGenero
+	 Where (@pAutor IS NULL Or @pAutor = FKAutor)
 		And (@pGenero IS NULL Or @pGenero = FKGenero);
 	End
 

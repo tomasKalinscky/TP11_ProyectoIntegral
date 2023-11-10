@@ -1,12 +1,9 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-function MostrarInfoLibro(IDS){
+﻿function MostrarInfoLibro(IDS)
+{
     $.ajax({
-        type:'POST',
-        dataType: 'JSON',
         url: '/Home/VerDetalleLibroAjax',
+        type:'GET',
+        dataType: 'JSON',
         data: {IDLibro: IDS},
         success:
             function (response){
@@ -20,9 +17,6 @@ function MostrarInfoLibro(IDS){
                 texto+= "Precio: " + response.precio+ "<br>";
                 texto+= "<img src='" + response.foto + "' class='img-fluid '></p>";
                 $("#infoSerie").html(texto);
-            },
-            error : function(xhr,status){
-                alert("Disculpe, hubo un problema, Matias Aboudara hizo algo mal");
             },
             complete: function(xhr,status){
                 console.log('Peticion realizada')

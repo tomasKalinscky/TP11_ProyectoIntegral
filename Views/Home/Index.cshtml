@@ -1,8 +1,22 @@
-﻿@{
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  @{
     ViewData["Title"] = "Home Page";
 }
-<div class="div-container row row-cols">
-  @foreach (var item in ViewBag.Libros)
+
+</head>
+<body>
+  <div class="div-container row row-cols">
+    @foreach (Libro item in ViewBag.Libros)
+    {
+    <p>@item.IDLibro</p>  
+    }
+    
+  @foreach (Libro item in ViewBag.Libros)
   {
       <div class="card " style="width: 18rem;">
           <div class="img-container">
@@ -24,7 +38,9 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body"> 
-          <div></div>
+          <div class="imagen"></div>
+          <div class=""></div>
+          <div class=""></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -33,3 +49,5 @@
     </div>
   </div>
 </div>
+</body>
+</html>
