@@ -28,7 +28,12 @@ body {
   margin: 1%;
 }
 .creditos img {
-  width: 100%;
+  width: 300px;
+  height: 200px;
+}
+.card
+{
+  margin: 25px;
 }
 footer {
   background-color: #272727b6;;
@@ -60,4 +65,15 @@ footer div a {
   text-decoration: none;
   margin-right: 10px;
   display: inline;
+}
+.div-container
+{
+  display: flex;
+  justify-content: space-between;
+}
+.img-container
+{
+  height: 100%;
+  display: flex;
+  align-items: center;
 }

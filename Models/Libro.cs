@@ -7,12 +7,12 @@ public class Libro{
     public DateTime FechaDePublicacion {get; set;}
     public int FKAutor {get; set;}
     public int Stock {get; set;}
-    public string Foto {get; set;}
+    public string Imagen {get; set;}
     public float Precio {get; set;}
     public Libro(){
 
     }
-    public Libro(int IDLibro = 0,string Titulo = "",int FKGenero =0 ,string Descripcion = "" ,DateTime FechaDePublicacion = new DateTime(), int FKAutor = 0, int Stock = 0, string Foto = "", float Precio = 0){
+    public Libro(int IDLibro = 0,string Titulo = "",int FKGenero =0 ,string Descripcion = "" ,DateTime FechaDePublicacion = new DateTime(), int FKAutor = 0, int Stock = 0, string Imagen = "", float Precio = 0){
         this.IDLibro = IDLibro;
         this.Titulo = Titulo;
         this.Precio= Precio;
@@ -21,6 +21,6 @@ public class Libro{
         this.FechaDePublicacion = FechaDePublicacion;
         this.Descripcion = Descripcion;
         this.Stock = Stock;
-        this.Foto = Foto;
+        this.Imagen = Imagen;
     }
 }
