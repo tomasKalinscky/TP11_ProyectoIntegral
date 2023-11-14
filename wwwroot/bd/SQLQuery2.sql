@@ -45,10 +45,15 @@
 	Insert Into Historial (FKCompra,FKUsuario,Fecha,FKLibro) values (@pcompra,@pusuario,@pfecha,@plibro)
 	End
 
-	Create Procedure SP_DetalleLibro
+	Alter Procedure SP_DetalleLibro
 	@pidlibro int
 	As
 	Begin
-	Select * From Libro Where Libro.IDLibro = @pidlibro;
+	Select Titulo,G.Nombre as 'Genero',A.Nombre as 'NombreAutor',Descripcion,FechaDePublicacion,Imagen,Precio From Libro
+	Inner Join Genero G On G.IDGenero = Libro.FKGenero
+	Inner Join Autor A On A.IDAutor = Libro.FKAutor
+	Where Libro.IDLibro = @pidlibro;
 	End
+
+	Exec SP_DetalleLibro 15
 

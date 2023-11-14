@@ -9,13 +9,12 @@
             function (response){
                 console.log(response);
                 $("#TituloLibro").html("Detalle del libro: " + response.titulo);
-
-                let texto = "<p> Año de estreno: " +response.añoInicio + "<br>";
-                texto+= "Sintesis: " + response.descripcion + "<br>";
-                texto+= "Fecha de publicacion: " + response.fechaDePublicacion+ "<br>";
-                texto+= "Stock actual: " + response.stock+ "<br>";
-                texto+= "Precio: " + response.precio+ "<br>";
-                texto+= "<img src='" + response.imagen + "' class='img-fluid '></p>";
+                let texto = "<p><img src='" + response.imagen + "' class='img-fluid '></p>";
+                texto+= `<p>Genero: ${response.genero}</p>`;
+                texto+= "<p>Autor: " + response.nombreAutor+ "</p>";
+                texto+= "<p>Sintesis: " + response.descripcion + "</p>";
+                texto+= "<p>Fecha de publicacion: " + response.fechaDePublicacion+ "</p>";
+                texto+= "<p>Stock actual: " + response.stock+ "</p>";
                 $("#infoLibro").html(texto);
             },
             error : function(xhr,status){
