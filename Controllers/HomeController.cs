@@ -12,8 +12,19 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
- 
+    public IActionResult login(){
+        return View();
+    }
     public IActionResult Creditos(){
+        return View();
+    }
+    public IActionResult perfil(){
+        return View();
+    }
+    public IActionResult Historial(){
+        return View();
+    }
+    public IActionResult bibloteca(){
         return View();
     }
     public IActionResult Index()

@@ -27,18 +27,18 @@
             Funcionalidades
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Home</a></li>
-            <li><a class="dropdown-item" href="#">Historial</a></li>
-            <li><a class="dropdown-item" href="#">Libros</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Carrito</a></li>
+            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="login">Iniciar Sesion</a></li>
           </ul>
         </li>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Creditos">Creditos</a>
+          <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="login">Iniciar Sesion</a>
         </li>
         
       </ul>
