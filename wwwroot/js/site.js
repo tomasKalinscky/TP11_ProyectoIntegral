@@ -1,9 +1,9 @@
 ﻿function MostrarInfoLibro(IDS)
 {
     $.ajax({
-        url: '/Home/VerDetalleLibroAjax',
         type:'GET',
         dataType: 'JSON',
+        url: '/Home/VerDetalleLibroAjax',
         data: {IDLibro: IDS},
         success:
             function (response){
@@ -18,8 +18,11 @@
                 texto+= "<img src='" + response.foto + "' class='img-fluid '></p>";
                 $("#infoSerie").html(texto);
             },
+            error : function(xhr,status){
+                alert("Disculpe, hubo un problema, Matias Aboudara hizo algo mal");
+            },
             complete: function(xhr,status){
                 console.log('Peticion realizada')
             }
-    })
+    });
 }
