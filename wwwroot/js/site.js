@@ -15,7 +15,7 @@
                 texto+= "Fecha de publicacion: " + response.fechaDePublicacion+ "<br>";
                 texto+= "Stock actual: " + response.stock+ "<br>";
                 texto+= "Precio: " + response.precio+ "<br>";
-                texto+= "<img src='" + response.foto + "' class='img-fluid '></p>";
+                texto+= "<img src='" + response.imagen + "' class='img-fluid '></p>";
                 $("#infoLibro").html(texto);
             },
             error : function(xhr,status){
