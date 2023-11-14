@@ -20,7 +20,7 @@ html {
 body {
   margin-bottom: 60px;
   height: 100vh;
-  background-color: grey;
+  background-color: rgb(59, 59, 59);
 }
 .creditos{
   float: left;
