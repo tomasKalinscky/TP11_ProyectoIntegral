@@ -49,7 +49,7 @@
 	@pidlibro int
 	As
 	Begin
-	Select Titulo,G.Nombre as 'Genero',A.Nombre as 'NombreAutor',Descripcion,FechaDePublicacion,Imagen,Precio From Libro
+	Select Titulo,G.Nombre as 'Genero',A.Nombre as 'NombreAutor',Descripcion,FechaDePublicacion,Imagen,Precio,Stock From Libro
 	Inner Join Genero G On G.IDGenero = Libro.FKGenero
 	Inner Join Autor A On A.IDAutor = Libro.FKAutor
 	Where Libro.IDLibro = @pidlibro;
