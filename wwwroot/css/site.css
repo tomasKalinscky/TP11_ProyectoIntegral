@@ -14,7 +14,9 @@ text,p,h1,h2,h3,h4,h5,h6{
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
-
+.card {
+  min-height: 630px;
+}
 html {
   position: relative;
   min-height: 100%;
@@ -182,4 +184,12 @@ label {
   font-weight: bold;
   display: block;
   margin-bottom: 5px;
+}
+.DiseñoComprar{
+  width: 70%;
+  background-color: #585858c7;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  height: 30%;
 }

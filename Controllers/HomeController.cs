@@ -33,7 +33,11 @@ public class HomeController : Controller
         ViewBag.Libros = BD.ListarLibrosYFiltros();
         return View();
     }
-
+    public IActionResult ComprarLibro(int IDLibro){
+        ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+        
+        return View();
+    }
         public IActionResult Olvide(){
         return View();
     }

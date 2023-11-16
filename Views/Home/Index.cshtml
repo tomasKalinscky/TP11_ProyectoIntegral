@@ -10,22 +10,28 @@
 
 </head>
 <body>
-  <div class="div-container row row-cols">
-  @foreach (Libro item in ViewBag.Libros)
-  {
-      <div class="card" style="width: 18rem;">
-          <div class="img-container">
-            <img src="@item.Imagen" class="card-img-top " alt="...">
-          </div>
+  <div class="container-fluid">
+    <div class="row">
+        @foreach (Libro item in ViewBag.Libros)
+        {
+          <div class="col-md-3 col-12">
+            <div class="card" style="width: auto;">
+                <div class="img-container">
+                  <img src="@item.Imagen" class="card-img-top " alt="...">
+                </div>
 
-          <div class="card-body">
-              <h5 class="card-title">@item.Titulo</h5>
-              <button class="btn-donate" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IDLibro)">Saber Mas</button>
-              
-              <button class="Btn" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
+                <div class="card-body">
+                    <h5 class="card-title">@item.Titulo</h5>
+                    <button class="btn-donate" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IDLibro)">Saber Mas</button>
+                    <a href='@Url.Action("ComprarLibro",new{IDLibro = @item.IDLibro})'>
+                    <button class="Btn" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
+                    </a>
+                </div>
+            </div>
           </div>
-      </div>
-  }
+        }
+    </div>
+</div>
   <div class="modal fade" id="ModalLibro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
