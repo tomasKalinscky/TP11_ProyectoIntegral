@@ -13,15 +13,16 @@
   <div class="div-container row row-cols">
   @foreach (Libro item in ViewBag.Libros)
   {
-      <div class="card " style="width: 18rem;">
+      <div class="card" style="width: 18rem;">
           <div class="img-container">
             <img src="@item.Imagen" class="card-img-top " alt="...">
           </div>
 
           <div class="card-body">
               <h5 class="card-title">@item.Titulo</h5>
-              <button type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IDLibro)">Ver detalle del Libro</button>
-              <button type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
+              <button class="btn-donate" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IDLibro)">Saber Mas</button>
+              
+              <button class="Btn" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
           </div>
       </div>
   }
