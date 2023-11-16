@@ -9,7 +9,7 @@ public class AccountController : Controller
     public IActionResult registro(Usuario nuevoUsuario) {
          
         BD.RegistrarUsuario(nuevoUsuario);
-        return View("Index");
+        return RedirectToAction("Index", "Home");
     }
 
     public IActionResult olvide(string usuario, string contraseña) {
@@ -20,10 +20,11 @@ public class AccountController : Controller
     [HttpPost]
   public IActionResult login(string usuario, string contraseña) {
     if (BD.Login(usuario, contraseña)) {
-        return  RedirectToAction("Bienvenida", "Home", new {pusuario = usuario});
+        return  RedirectToAction("Index", "Home");
     }
-
-    return RedirectToAction("Index", "Home", new {user = true});
+    else { 
+        return  RedirectToAction("Login", "Home", new {user = true});
+    }
 }
 
 }

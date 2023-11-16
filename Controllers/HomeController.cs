@@ -12,7 +12,8 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
-    public IActionResult login(){
+    public IActionResult login(bool user=false){
+        ViewBag.usuarioEstaMal = user;
         return View();
     }
     public IActionResult Creditos(){

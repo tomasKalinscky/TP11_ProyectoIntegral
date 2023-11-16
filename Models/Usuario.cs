@@ -8,7 +8,7 @@ public class Usuario{
     public Usuario(){
 
     }
-    public Usuario(int IDUsuario = 0,string NombreUsuario = "",string Contraseña ="",string Gmail = null,string Telefono = ""){
+    public Usuario(int IDUsuario = 0,string NombreUsuario = "",string Contraseña ="",string Gmail = "",string Telefono = ""){
         this.IDUsuario = IDUsuario;
         this.NombreUsuario = NombreUsuario;
         this.Contraseña = Contraseña;
