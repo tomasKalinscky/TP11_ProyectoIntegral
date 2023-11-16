@@ -128,7 +128,7 @@ html {
       max-width:550px;
       min-height:705px;
       position:relative;
-      background:url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center;
+      background:url(https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D) no-repeat center;
       box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
   }
   .login-html{
@@ -136,7 +136,7 @@ html {
       height:100%;
       position:absolute;
       padding:90px 70px 50px 70px;
-      background:rgba(40,57,101,.9);
+      background:rgba(202, 123, 33, 0.6);
   }
   .login-html .sign-in-htm,
   .login-html .sign-up-htm{
@@ -193,14 +193,15 @@ html {
       border:none;
       padding:15px 20px;
       border-radius:25px;
-      background:rgba(255,255,255,.1);
+      background:rgba(255,255,255,.3);
   }
   .login-form .group input[data-type="password"]{
       text-security:circle;
       -webkit-text-security:circle;
   }
   .login-form .group .label{
-      color:#aaa;
+      color:#000000;
+      font-weight: bold;
       font-size:12px;
   }
   .login-form .group .button{
