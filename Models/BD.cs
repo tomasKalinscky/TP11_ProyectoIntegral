@@ -36,6 +36,7 @@ public static class BD
             broder = db.QueryFirstOrDefault<Usuario>(sql, new {pusername = username, pcontraseña = contraseña});
         }
         if (broder != null && !string.IsNullOrEmpty(broder.NombreUsuario)) {
+            user = broder;
         return true; 
     } else {
         return false; 

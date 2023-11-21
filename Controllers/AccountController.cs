@@ -20,7 +20,8 @@ public class AccountController : Controller
     [HttpPost]
   public IActionResult login(string usuario, string contraseña) {
     if (BD.Login(usuario, contraseña)) {
-        BD.User = null; 
+        /*BD.user = null;*/ 
+        
         /*esto deberia se = Usuario algo, pero esta mal hecho*/
         return  RedirectToAction("Index", "Home");
     }

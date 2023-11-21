@@ -12,6 +12,10 @@ public class HomeController : Controller
     {
         _logger = logger;
     }
+    public IActionResult CerrarSesion(){
+        BD.user = null;
+        return View("login");
+    }
     public IActionResult login(bool user=false){
         
         ViewBag.usuarioEstaMal = user;
@@ -21,6 +25,11 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult perfil(){
+        if (BD.user != null)
+        ViewBag.InfoUsuario = BD.user;
+        else {
+            return View("login");
+        }
         return View();
     }
     public IActionResult Historial(){
@@ -36,7 +45,11 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult ComprarLibro(int IDLibro){
+        if (BD.user != null)
         ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+        else {
+            return View("login");
+        }
         
         return View();
     }
