@@ -13,6 +13,7 @@ public class HomeController : Controller
         _logger = logger;
     }
     public IActionResult login(bool user=false){
+        
         ViewBag.usuarioEstaMal = user;
         return View();
     }
@@ -30,6 +31,7 @@ public class HomeController : Controller
     }
     public IActionResult Index()
     {
+
         ViewBag.Libros = BD.ListarLibrosYFiltros();
         return View();
     }
