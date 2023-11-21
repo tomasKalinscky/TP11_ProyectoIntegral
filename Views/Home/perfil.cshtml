@@ -1,11 +1,16 @@
+@{
+    ViewData["Title"] = "Perfil";
+}
+
 <div id="profile-container">
         <h1>Perfil</h1>
         <div id="profile-info">
-            <label for="firstName">Nombre:</label>
-            <span id="firstName"></span>
+            <label>Nombre de usuario: @ViewBag.InfoUsuario.NombreUsuario</label>
 
-            <label for="lastName">Apellido:</label>
-            <span id="lastName"></span>
+            <label>ID de usuario: @ViewBag.InfoUsuario.IDUsuario</label>
+            
+            <label>Email: @ViewBag.InfoUsuario.Gmail</label>
+
         </div>
     </div>
 

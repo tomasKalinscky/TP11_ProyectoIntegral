@@ -8,6 +8,7 @@ namespace TP11_ProyectoIntegral.Models;
 public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
+    public static Usuario user = null;
     
     public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
         List<Libro> libros = null;
@@ -35,6 +36,7 @@ public static class BD
             broder = db.QueryFirstOrDefault<Usuario>(sql, new {pusername = username, pcontraseña = contraseña});
         }
         if (broder != null && !string.IsNullOrEmpty(broder.NombreUsuario)) {
+            user = broder;
         return true; 
     } else {
         return false; 
