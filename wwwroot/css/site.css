@@ -70,10 +70,11 @@ body {
   background-color: #f3dc5ab6;
   border-color: #d66214;
   text-align: center;
-  min-height: 97%;
+  min-height: 60%;
 }
 .card img{
   height: 60%;
+  max-height: 470px;
 }
 footer {
   background-color: #272727b6;;

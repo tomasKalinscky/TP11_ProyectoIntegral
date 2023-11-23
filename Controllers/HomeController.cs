@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP11_ProyectoIntegral.Models;
+using System.Collections.Generic;
 
 namespace TP11_ProyectoIntegral.Controllers;
 
@@ -71,4 +72,5 @@ public class HomeController : Controller
     { 
         return BD.DetalleLibro(IDLibro);
     }
+    
 }
