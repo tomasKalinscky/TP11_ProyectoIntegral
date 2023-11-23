@@ -68,7 +68,8 @@ body {
   margin: 5%;
   padding: 5px;
   background-color: #f3dc5ab6;
-  border-color: #d66214;
+  border: 2px solid #d66214;
+  border-radius: 10px;
   text-align: center;
   min-height: 60%;
 }

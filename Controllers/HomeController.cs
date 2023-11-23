@@ -72,5 +72,9 @@ public class HomeController : Controller
     { 
         return BD.DetalleLibro(IDLibro);
     }
+    public IActionResult Historial(int IDusuario)
+    { 
+        return View();
+    }
     
 }
