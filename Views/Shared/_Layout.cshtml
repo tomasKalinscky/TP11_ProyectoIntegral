@@ -12,46 +12,7 @@
 </head>
 <body style="background-color:grey">
 <header style="background-color:black" style="height:5%">
-<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-  <div style="width: 15%; height: 10%">
-    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/Fotos/logo_bookhook_sin_fondo.png" style="width: 100%; height: 100%" > </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Funcionalidades
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a></li>
-            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" asp-area="" asp-controller="Home" asp-action="login">Iniciar Sesion</a>
-        </li>
-        
-      </ul>
-      
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Buscar Libro</button>
-      </form>
-    </div>
-  </div>
-</nav>-->
 
-<!-- dwadawdadadawdadaadaawdadwawddwadawdwadawdawdwawddawdawdawdawdawawddawdawadwdawdawawddwadawdawadwadwawddawdawdawawdadwawdawddawdawdawdawawddawawd-->
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
       <div class="offcanvas-header">
@@ -66,12 +27,14 @@
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
           </li>
-          <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
-          </li>
-          <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
-          </li>
+          @if(BD.user != null){
+            <li class="nav-item">
+              <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+            </li>
+            <li class="nav-item">
+              <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
+            </li>
+          }
       </ul>
       </div>
     </div>
@@ -90,12 +53,22 @@
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
           </li>
+          @if(BD.user != null){
+            
+          
           <li class="nav-item">
+
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
           </li>
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
           </li>
+          }
+          else {
+            <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="login">Iniciar Sesion</a>
+          </li>
+          }
         </div>
       </div>
 
