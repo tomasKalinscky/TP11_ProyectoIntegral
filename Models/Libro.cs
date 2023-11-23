@@ -8,9 +8,10 @@ public class Libro{
     public int FKAutor {get; set;}
     public int Stock {get; set;}
     public string Imagen {get; set;}
-    public float Precio {get; set;}
+    public float Precio {get; set;} 
     public string NombreAutor {get;set;}
     public string Genero {get;set;}
+    
     public Libro(){
 
     }
