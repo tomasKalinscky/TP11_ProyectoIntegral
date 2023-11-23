@@ -12,7 +12,7 @@
 </head>
 <body style="background-color:grey">
 <header style="background-color:black" style="height:5%">
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!--<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
   <div style="width: 15%; height: 10%">
     <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="/Fotos/logo_bookhook_sin_fondo.png" style="width: 100%; height: 100%" > </a>
@@ -49,34 +49,104 @@
       </form>
     </div>
   </div>
-</nav>
-</header>
-
+</nav>-->
 
 <!-- dwadawdadadawdadaadaawdadwawddwadawdwadawdawdwawddawdawdawdawdawawddawdawadwdawdawawddwadawdawadwadwawddawdawdawawdadwawdawddawdawdawdawawddawawd-->
 
-<!--
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">TP11_ProyectoIntegral</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>+
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+
+      <div class="offcanvas offcanvas-start bg-color" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="container offcanvas-body">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
+          </li>
+        </div>
+      </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="d-flex container-fluid">
+          <div class="div-expand">
+              <div class="d-flex flex-row">
+            <button class="navbar-toggler color-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"  aria-controls="offcanvasResponsive">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-toggler"href="#">NOMBRE B</a>
             </div>
-        </nav>
-    </header>-->
+          </div>
+          <div class="img-element">
+            <a href="#"><img class="navbar-toggler border border-0" src="lupa.png" alt=""></a>
+            <img class="navbar-toggler border border-0" src="aeaeaea.jpg" alt="">
+          </div>
+          
+          <div class="collapse navbar-collapse" id="offcanvasResponsive">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item d-flex align-items-center">
+                <button class="btn color-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                    <img src="/Fotos/navbar-toggler-icon.png" alt="">
+                  </button>
+              </li>
+
+              <li class="nav-item d-flex align-items-center ms-1">
+                <a class="nav-link  asp-area=" asp-controller="Home" asp-action="Index"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></a>
+              </li>
+
+              <!--<li class="nav-item">
+                <a class="nav-link" href="#">NADA</a>
+              </li>-->
+
+            </ul> 
+            <div class="navbar-derecha">
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Buscar</button>
+              </form>
+              <img src="aeaeaea.jpg" alt="">
+            </div>
+
+          </div>
+        </div>
+      </nav>
+
+</header>
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
