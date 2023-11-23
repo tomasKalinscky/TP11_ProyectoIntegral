@@ -60,5 +60,16 @@ public static class BD
         }
         return libro;
     }
+    public static List<Historial> ObtenerHistorial(int IDUsuario){
+        List<Historial> historial = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            
+            string sql = "select * from historial where IDUsuario = @pIDUsuario";
+            historial = db.Query<Historial>(sql, new{pIDUsuario = IDUsuario},
+                    commandType: System.Data.CommandType.StoredProcedure).ToList();
+        }
+        return historial;
+    }
    
 }

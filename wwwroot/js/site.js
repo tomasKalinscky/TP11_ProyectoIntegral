@@ -35,6 +35,7 @@ function MostrarHistorialCompras(IDS)
         success:
             function (response){
                 console.log(response);
+                let texto="<p> hola " + response.tituloLibro + "</p>"
                 $("#infoHistorial").html(texto);
             },
             error : function(xhr,status){
