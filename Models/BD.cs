@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01; DataBase=BDTP11;Trusted_Connection=True;";
     public static Usuario user = null;
     
     public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
@@ -26,7 +26,7 @@ public static class BD
         List<Libro> libros = new List<Libro>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Select * From Libro Where Libro.Titulo Like '%@pTitulo%'";
+            string sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%'";
             libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
         }
         return libros;

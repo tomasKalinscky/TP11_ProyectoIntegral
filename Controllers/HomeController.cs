@@ -47,6 +47,7 @@ public class HomeController : Controller
         {
             ViewBag.error = "No es nada";
         }
+        ViewBag.ComoVa = loquepongaenelbuscador;
         return View("librobuscado");
     }
     public IActionResult Index()
