@@ -201,3 +201,6 @@ label {
   background-color: white;
   color: #000000!important;
 }
+*:focus {
+  outline: none;
+}

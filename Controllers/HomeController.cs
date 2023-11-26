@@ -45,9 +45,8 @@ public class HomeController : Controller
         ViewBag.Libros = BD.BuscarLibro(loquepongaenelbuscador);
         if(ViewBag.Libros.Count == 0)
         {
-            ViewBag.error = "No es nada";
+            ViewBag.error = $"No se a encontrado un libro que contega la palabra '{loquepongaenelbuscador}' ";
         }
-        ViewBag.ComoVa = loquepongaenelbuscador;
         return View("librobuscado");
     }
     public IActionResult Index()
