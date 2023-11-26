@@ -105,8 +105,8 @@
 
             </ul> 
             <div class="navbar-derecha">
-              <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+              <form class="d-flex" method="post" action='@Url.Action("BuscarLibro")'>
+                <input id="loquepongaenelbuscador" name="loquepongaenelbuscador" class="form-control me-2" type="text" placeholder="Buscar" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
               </form>
               <img src="aeaeaea.jpg" alt="">

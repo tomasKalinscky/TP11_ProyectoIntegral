@@ -21,6 +21,16 @@ public static class BD
         }
         return libros;
     }
+    public static List<Libro> BuscarLibro(string loquepongaenelbuscador)
+    {
+        List<Libro> libros = new List<Libro>();
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Select * From Libro Where Libro.Titulo Like '%@pTitulo%'";
+            libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
+        }
+        return libros;
+    }
     public static bool RegistrarUsuario(Usuario us){
         int n;
         using (SqlConnection db = new SqlConnection(_connectionString)){
