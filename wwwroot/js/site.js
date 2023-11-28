@@ -30,7 +30,7 @@ function MostrarHistorialCompras(IDS)
     $.ajax({
         type:'GET',
         dataType: 'JSON',
-        url: '/Home/VerHistorialAjax',
+        url: '/Home/MostrarHistorialCompras',
         data: {IDUsuario: IDS},
         success:
             function (response){

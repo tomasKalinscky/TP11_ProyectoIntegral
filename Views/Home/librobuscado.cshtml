@@ -1,22 +1,26 @@
-@foreach (Libro libro in ViewBag.Libros)
-{
-    <div class="col-md-4 col-12">
-            <div class="card" style="width: auto;">
-                <div class="img-container">
-                  <img src="@libro.Imagen" class="card-img-top " alt="...">
-                </div>
+<div class="container-fluid">
+  <div class="row">
+  @foreach (Libro libro in ViewBag.Libros)
+  {
+      <div class="col-md-4 col-12">
+              <div class="card" style="width: auto;">
+                  <div class="img-container">
+                    <img src="@libro.Imagen" class="card-img-top " alt="...">
+                  </div>
 
-                <div class="card-body">
-                    <h5 class="card-title">@libro.Titulo</h5>
-                    <button class="button" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@libro.IDLibro)">Saber Mas</button>
-                    <a href='@Url.Action("ComprarLibro",new{IDLibro = @libro.IDLibro})'>
-                    <button class="button" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
-                    </a>
-                    </div>
-                </div>
-            </div>
-       
-}
+                  <div class="card-body">
+                      <h5 class="card-title">@libro.Titulo</h5>
+                      <button class="button" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@libro.IDLibro)">Saber Mas</button>
+                      <a href='@Url.Action("ComprarLibro",new{IDLibro = @libro.IDLibro})'>
+                      <button class="button" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
+                      </a>
+                      </div>
+                  </div>
+              </div>
+        
+  }
+  </div>
+</div>
 <div class="modal fade" id="ModalLibro" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
