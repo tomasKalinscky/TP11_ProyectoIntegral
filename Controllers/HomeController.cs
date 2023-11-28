@@ -75,7 +75,20 @@ public class HomeController : Controller
             return View("login");
         }
         
-    }
+    }/*
+    [HttpPost] public IActionResult GuardarLibro(string Genero, DateTime FechaDePublicacion, int IDPartido, string Apellido, string Nombre, string Foto, string Postulacion) {
+    Libro lib = new Libro(IDCandidato, IDPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion);
+    BD.AgregarLibro(lib);
+    return RedirectToAction("VerDetallePartido", new {IDPartido = can.IDPartido});
+}
+ <input type="text" name="Titulo" placeholder="Titulo" required>
+        <input type="text" name="Genero" placeholder="Genero" required>
+        <input type="date" name="FechaDePublicacion" required>
+        <input type="text" name="Imagen" placeholder="Link a la foto" required>
+        <input type="text" name="Autor" placeholder="nombre del autor" required>
+        <input type="text" name="Stock" placeholder="Ponga el stock a agregar" required>
+        <input type="text" name="Descripcion" placeholder="Ponga una breve descripcion"required>
+        <button type="sumbit">Agregar libro</button>*/
     public IActionResult Privacy()
     {
         return View();
