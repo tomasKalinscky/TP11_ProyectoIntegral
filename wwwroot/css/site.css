@@ -103,7 +103,7 @@ body {
   border: 0;
   cursor: pointer;
   will-change: box-shadow,transform;
-  background: radial-gradient( 100% 100% at 100% 0%, #ecc24c 0%, #f7920f 100% );
+  background: radial-gradient( 100% 100% at 100% 0%, #f85e3e 0%, #f7920f 100% );
   box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
   padding: 0 2em;
   border-radius: 0.3em;
@@ -125,7 +125,7 @@ body {
 .card
 {
   margin: 5%;
-  background-color: #ffffff;
+  background-color: #000000;
   border: 2px solid #000000;
   border-radius: 10px;
   text-align: center;
@@ -205,7 +205,7 @@ label {
 }
 .color-custom
 {
-    background-color: rgb(255, 102, 0) !important;
+    background-color: #f85e3e !important;
 }
 .div-expand
 {
@@ -291,4 +291,31 @@ height: auto;
 .form-AgregarCandidato{
   width: 100%;
   height: -50%;
+}
+.custom-shape-divider-bottom-1701179513 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1701179513 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 67px;
+}
+
+.custom-shape-divider-bottom-1701179513 .shape-fill {
+  fill: #000000;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  background: linear-gradient(to bottom, #f85e3e, #120101);
+  background-size: cover;
 }
