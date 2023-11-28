@@ -110,5 +110,7 @@ public class HomeController : Controller
     public List<Historial> MostrarHistorialCompras(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }
-    
+    public List<MetodoPago> ElegirMetodoPago(){
+        return BD.ListarMetodoDePago();
+    }
 }
