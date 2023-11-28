@@ -35,7 +35,17 @@ function MostrarHistorialCompras(IDS)
         success:
             function (response){
                 console.log(response);
-                let texto="<p> hola " + response.tituloLibro + "</p>"
+                let texto="<p>";
+                if ((response.length)>0) {
+                    response.forEach(element => {
+                        texto = texto + "Fecha: "+element.fecha.substring(0,10)+" Titulo del libro: "+element.tituloLibro+"<br><br>";
+                    });
+                }
+                else{
+                    texto=texto + "No tiene ninguna compra todavia";
+                }
+               
+                texto= texto + "</p>";
                 $("#infoHistorial").html(texto);
             },
             error : function(xhr,status){

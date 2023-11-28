@@ -67,7 +67,15 @@ public class HomeController : Controller
         public IActionResult Olvide(){
         return View();
     }
-
+    public IActionResult AgregarLibro(){
+        if (BD.user != null){
+            return View();
+        }
+        else{
+            return View("login");
+        }
+        
+    }
     public IActionResult Privacy()
     {
         return View();
@@ -82,7 +90,7 @@ public class HomeController : Controller
     { 
         return BD.DetalleLibro(IDLibro);
     }
-    public List<Historial> MostrarHistorialCompras(int IDUsuario){
+    public List<Historial> VerHistorialAjax(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }
     
