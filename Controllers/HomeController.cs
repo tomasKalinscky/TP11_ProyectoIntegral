@@ -103,7 +103,11 @@ public class HomeController : Controller
     { 
         return BD.DetalleLibro(IDLibro);
     }
-    public List<Historial> VerHistorialAjax(int IDUsuario){
+
+    public List<MetodoPago> elegirMetodoPago() {
+        return BD.obtenerMetodosPago();
+    }
+    public List<Historial> MostrarHistorialCompras(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }
     

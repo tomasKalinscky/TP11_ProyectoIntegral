@@ -63,6 +63,17 @@ public static class BD
         }
         return n != 0;
     }
+
+    public static List<MetodoPago> obtenerMetodosPago() {
+        List<MetodoPago> metodosPago = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            
+            string sql = "select * from MetodoPago";
+            metodosPago = db.Query<MetodoPago>(sql).ToList();
+        }
+        return metodosPago;
+    }
     public static Libro DetalleLibro(int idlibro){
         Libro libro = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
