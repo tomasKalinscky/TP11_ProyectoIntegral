@@ -56,3 +56,26 @@ function MostrarHistorialCompras(IDS)
             }
     });
 }
+function ElegirMetodoPago(IDS){
+    $.ajax({
+        type:'GET',
+        dataType: 'JSON',
+        url: '/Home/ElegirMetodoPago',
+        data: {},
+        success:
+            function (response){
+                console.log(response);
+                let texto="<p>";
+                
+               
+                texto= texto + "</p>";
+                $("#infoHistorial").html(texto);
+            },
+            error : function(xhr,status){
+                alert("Disculpe, hubo un problema, Matias Aboudara hizo algo mal");
+            },
+            complete: function(xhr,status){
+                console.log('Peticion realizada')
+            }
+    });
+}
