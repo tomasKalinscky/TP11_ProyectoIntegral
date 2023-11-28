@@ -57,7 +57,10 @@ public class HomeController : Controller
     }
     public IActionResult ComprarLibro(int IDLibro){
         if (BD.user != null)
-        ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+        {
+            ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+            ViewBag.Usuario = BD.user;
+        }
         else {
             return View("login");
         }
@@ -104,13 +107,12 @@ public class HomeController : Controller
         return BD.DetalleLibro(IDLibro);
     }
 
-    public List<MetodoPago> elegirMetodoPago() {
-        return BD.obtenerMetodosPago();
-    }
+    
     public List<Historial> MostrarHistorialCompras(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }
     public List<MetodoPago> ElegirMetodoPago(){
         return BD.ListarMetodoDePago();
     }
+
 }

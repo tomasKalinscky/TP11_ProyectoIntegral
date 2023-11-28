@@ -56,7 +56,7 @@ function MostrarHistorialCompras(IDS)
             }
     });
 }
-function ElegirMetodoPago(IDS){
+function ElegirMetodoPago(){
     $.ajax({
         type:'GET',
         dataType: 'JSON',
@@ -65,11 +65,14 @@ function ElegirMetodoPago(IDS){
         success:
             function (response){
                 console.log(response);
-                let texto="<p>";
+                $("#TituloPago").html("Metodo de pago");
+                let texto='';
+                for (const metodosDePago of response) 
+                {
+                    texto += `<input type="radio" name="FKMetodoDePago" value="metodosDePago.idMetodoPago" >${metodosDePago.metodoDePago}<br>`;
+                }       
+                $("#infoPago").html(texto);
                 
-               
-                texto= texto + "</p>";
-                $("#infoHistorial").html(texto);
             },
             error : function(xhr,status){
                 alert("Disculpe, hubo un problema, Matias Aboudara hizo algo mal");
@@ -79,3 +82,13 @@ function ElegirMetodoPago(IDS){
             }
     });
 }
+
+
+
+/*  
+    <input type="radio" name="FKMetodoDePago">Tarjeta de Credito
+    <input type="radio" name="FKMetodoDePago">Tarjeta de Debito
+    <input type="radio" name="FKMetodoDePago">Efectivo
+    <input type="radio" name="FKMetodoDePago">MercadoPago QR
+    <input type="radio" name="FKMetodoDePago">MercadoPago Transferencia
+  </form>*/ 

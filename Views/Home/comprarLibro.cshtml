@@ -2,14 +2,23 @@
   align-items: center;
   justify-content: center;">
 <div class="DiseñoComprar">
-    <h1>@ViewBag.InfoLibro.Titulo</h1>
+     <h1>@ViewBag.InfoLibro.Titulo</h1>
     <h4>@ViewBag.InfoLibro.Descripcion</h4>
     <h4>@ViewBag.InfoLibro.FechaDePublicacion.Year / @ViewBag.InfoLibro.FechaDePublicacion.Month / @ViewBag.InfoLibro.FechaDePublicacion.Day</h4>
     <div class='sm'><img class='comprarimg' src="@ViewBag.InfoLibro.Imagen"></div>
-    <h2>$@ViewBag.InfoLibro.Precio</h2>
+    <h2>@ViewBag.InfoLibro.Precio</h2>
     <h4>@ViewBag.InfoLibro.NombreAutor</h4>
     <h4>@ViewBag.InfoLibro.Genero</h4>
-    <button class="button" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPago" onclick="ElegirMetodoPago(@ViewBag.InfoLibro.Precio)">Elegir Metodo de pago</button>
+    <form method="post" action='@Url.Action("ComprarLibro")'>
+      <input type="hidden" id="FKUsuario" name="FKUsuario" value="@ViewBag.Usuario.IDUsuario">
+      <input type="hidden" id="FKLibro" name="FKLibro" value="@ViewBag.InfoLibro.IDLibro">
+      <input type="hidden" id="Precio" name="Precio" value="@ViewBag.InfoLibro.Precio">
+      <button class="button" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPago" onclick="ElegirMetodoPago(@ViewBag.InfoLibro.Precio)">Elegir Metodo de pago</button>
+      <input type="hidden" id="FechaYHora" name="FechaYHora" value="@DateTime.Now">
+      <input type="submit" value="Comprar">
+    </form>
+   
+    
 </div>
 </div>
 <div class="modal fade" id="ModalPago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
