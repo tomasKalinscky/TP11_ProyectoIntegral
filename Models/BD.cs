@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01; DataBase=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
     public static Usuario user = null;
     
     public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
@@ -63,6 +63,17 @@ public static class BD
         }
         return n != 0;
     }
+
+    public static List<MetodoPago> obtenerMetodosPago() {
+        List<MetodoPago> metodosPago = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            
+            string sql = "select * from MetodoPago";
+            metodosPago = db.Query<MetodoPago>(sql).ToList();
+        }
+        return metodosPago;
+    }
     public static Libro DetalleLibro(int idlibro){
         Libro libro = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
@@ -79,8 +90,7 @@ public static class BD
         {
             
             string sql = "select * from historial where IDUsuario = @pIDUsuario";
-            historial = db.Query<Historial>(sql, new{pIDUsuario = IDUsuario},
-                    commandType: System.Data.CommandType.StoredProcedure).ToList();
+            historial = db.Query<Historial>(sql, new {pIDUsuario = IDUsuario}).ToList();
         }
         return historial;
     }
