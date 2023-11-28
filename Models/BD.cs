@@ -93,4 +93,13 @@ public static class BD
         }
         return historial;
     }
+    public static List<MetodoPago> ListarMetodoDePago(){
+        List<MetodoPago> metodos = new List<MetodoPago>();
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Select * From MetodoPago";
+            metodos = db.Query<MetodoPago>(sql).ToList();  
+        }
+        return metodos;
+    }
 }
