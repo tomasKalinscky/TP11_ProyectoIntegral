@@ -2,7 +2,7 @@ html {
   font-size: 14px;
 }
 text,p,h1,h2,h3,h4,h5,h6{
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Lora', serif;
 }
 
 @media (min-width: 768px) {
@@ -245,18 +245,36 @@ label {
 {
   background-color: #272727;
 }
-.le-color
-{
+.offcanvas-body {
+  padding: 10px; /* Ajusta el relleno según tus necesidades */
+}
+
+.img-Logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px; /* Reduzco el espaciado entre el logo y otros elementos */
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.navbar-nav .nav-item {
+  margin-bottom: 5px; /* Reduzco el espaciado vertical entre elementos del menú */
+}
+
+.le-color {
   width: min-content;
   border-radius: 25px;
   color: white !important;
-  transition-duration:1.2s;
+  transition-duration: 0.5s;
+  padding: 8px 15px; /* Ajusta el relleno para que sea más compacto */
+  display: block;
 }
 
-.le-color:hover
-{
+.le-color:hover {
   background-color: white;
-  color: #000000!important;
+  color: #000000 !important;
 }
 *:focus {
   outline: none;

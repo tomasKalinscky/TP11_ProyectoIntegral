@@ -25,13 +25,12 @@
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un Libro</a>
-          </li>
           @if(BD.user != null){
           <li class="nav-item">
-
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un Libro</a>
           </li>
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
@@ -57,15 +56,16 @@
             <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
           </li>
-          <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un libro</a>
-          </li>
+          
           @if(BD.user != null){
             
           
           <li class="nav-item">
 
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un libro</a>
           </li>
           <li class="nav-item">
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
