@@ -85,14 +85,12 @@ public static class BD
         return libro;
     }
     public static List<Historial> ObtenerHistorial(int IDUsuario){
-        List<Historial> historial = null;
+        List<Historial> historial = new List<Historial>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            
-            string sql = "select * from historial where IDUsuario = @pIDUsuario";
-            historial = db.Query<Historial>(sql, new {pIDUsuario = IDUsuario}).ToList();
+            string sql = "Select * From Historial Where IDUsuario = @pIDUsuario";
+            historial = db.Query<Historial>(sql, new{pIDUsuario = IDUsuario}).ToList();  
         }
         return historial;
     }
-   
 }

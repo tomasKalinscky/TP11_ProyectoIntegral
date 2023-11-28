@@ -20,8 +20,8 @@
                   <img src="@item.Imagen" class="card-img-top " alt="...">
                 </div>
 
-                <div class="card-body">
-                    <h5 class="card-title">@item.Titulo</h5>
+                <div class="card-body" style="align-items: center;text-align:center;">
+                    <h5 class="card-title"><b>@item.Titulo</b></h5>
                     <button class="button" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalLibro" onclick="MostrarInfoLibro(@item.IDLibro)">Saber Mas</button>
                     <a href='@Url.Action("ComprarLibro",new{IDLibro = @item.IDLibro})'>
                     <button class="button" type="button" style="margin: 3px" class="btn btn-primary">Comprar</button>
