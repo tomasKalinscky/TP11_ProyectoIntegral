@@ -21,6 +21,16 @@ public static class BD
         }
         return libros;
     }
+    public static List<Libro> BuscarLibro(string loquepongaenelbuscador)
+    {
+        List<Libro> libros = new List<Libro>();
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%'";
+            libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
+        }
+        return libros;
+    }
     public static bool RegistrarUsuario(Usuario us){
         int n;
         using (SqlConnection db = new SqlConnection(_connectionString)){
@@ -35,12 +45,15 @@ public static class BD
             string sql = "SELECT * FROM Usuario where NombreUsuario = @pusername AND Contraseña = @pcontraseña";
             broder = db.QueryFirstOrDefault<Usuario>(sql, new {pusername = username, pcontraseña = contraseña});
         }
-        if (broder != null && !string.IsNullOrEmpty(broder.NombreUsuario)) {
+        if (broder != null && !string.IsNullOrEmpty(broder.NombreUsuario)) 
+        {
             user = broder;
-        return true; 
-    } else {
-        return false; 
-    }
+            return true; 
+        } 
+        else 
+        {
+            return false; 
+        }
     }
     public static bool RecuperarContraseña(string usuario, string contraseña){
         int n;
@@ -49,6 +62,17 @@ public static class BD
             n = db.Execute(sql, new {pcontraseña = contraseña, pusuario = usuario});
         }
         return n != 0;
+    }
+
+    public static List<MetodoPago> obtenerMetodosPago() {
+        List<MetodoPago> metodosPago = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            
+            string sql = "select * from MetodoPago";
+            metodosPago = db.Query<MetodoPago>(sql).ToList();
+        }
+        return metodosPago;
     }
     public static Libro DetalleLibro(int idlibro){
         Libro libro = null;
@@ -60,5 +84,13 @@ public static class BD
         }
         return libro;
     }
-   
+    public static List<Historial> ObtenerHistorial(int IDUsuario){
+        List<Historial> historial = new List<Historial>();
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "Select * From Historial Where IDUsuario = @pIDUsuario";
+            historial = db.Query<Historial>(sql, new{pIDUsuario = IDUsuario}).ToList();  
+        }
+        return historial;
+    }
 }

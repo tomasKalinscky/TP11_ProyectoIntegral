@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="~/TP11_ProyectoIntegral.styles.css" asp-append-version="true" />
     <link rel="shortcut icon" href="/casita_del_logo_(sin_fondo).png" />
 </head>
-<body style="background-color:grey">
+<body style="background-color:rgb(131, 131, 131)">
 <header style="background-color:black" style="height:5%">
 
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
+<div class="offcanvas offcanvas-start bg-color " tabindex="-1" id="offcanvasResponsive" aria-labelledby="offcanvasResponsiveLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel">Responsive offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasResponsiveLabel"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#offcanvasResponsive" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -25,15 +25,21 @@
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
           </li>
           <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un Libro</a>
           </li>
           @if(BD.user != null){
+          <li class="nav-item">
+
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
+          </li>
+          <li class="nav-item">
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
+          </li>
+          }
+          else {
             <li class="nav-item">
-              <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Perfil">Perfil</a>
-            </li>
-            <li class="nav-item">
-              <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="CerrarSesion">Cerrar Sesion</a>
-            </li>
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="login">Iniciar Sesion</a>
+          </li>
           }
       </ul>
       </div>
@@ -51,7 +57,7 @@
             <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
           </li>
           <li class="nav-item">
-            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="Historial">Historial</a>
+            <a class="dropdown-item le-color" asp-area="" asp-controller="Home" asp-action="AgregarLibro">Agregar un libro</a>
           </li>
           @if(BD.user != null){
             
@@ -77,9 +83,9 @@
           <div class="div-expand">
               <div class="d-flex flex-row">
             <button class="navbar-toggler color-custom" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasResponsive"  aria-controls="offcanvasResponsive">
-                <span class="navbar-toggler-icon"></span>
+                <img src="/Fotos/navbar-toggler-icon.png" alt="">
               </button>
-              <a class="navbar-toggler"href="#">NOMBRE B</a>
+              <a class="navbar-toggler" asp-controller="Home" asp-action="Index"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></a>
             </div>
           </div>
           <div class="img-element">
@@ -96,7 +102,7 @@
               </li>
 
               <li class="nav-item d-flex align-items-center ms-1">
-                <a class="nav-link  asp-area=" asp-controller="Home" asp-action="Index"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></a>
+                <a class="nav-link " asp-controller="Home" asp-action="Index"><img class="img-Logo" src="/Fotos/Logo-BookHook.png"></a>
               </li>
 
               <!--<li class="nav-item">
@@ -105,8 +111,13 @@
 
             </ul> 
             <div class="navbar-derecha">
+<<<<<<< HEAD
               <form class="d-flex" role="search">
                 <input class="form-control me-2" id="Buscador" type="search" placeholder="Buscar" aria-label="Search">
+=======
+              <form class="d-flex" method="post" action='@Url.Action("BuscarLibro")'>
+                <input id="loquepongaenelbuscador" name="loquepongaenelbuscador" class="form-control me-2" type="text" placeholder="Buscar" autocomplete="off" aria-label="Search">
+>>>>>>> ec7cb4e241b43c8702b56bf2663c7d1b014e7174
                 <button class="btn btn-outline-success" type="submit">Buscar</button>
               </form>
               <img src="aeaeaea.jpg" alt="">

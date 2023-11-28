@@ -4,16 +4,16 @@ public class Historial{
     public int IDCompra{get; set;}
     public int IDUsuario {get; set;}
     public DateTime Fecha {get; set;}
-    public int IDLibro {get; set;}
+    public string TituloLibro {get; set;}
     
     public Historial(){
 
     }
-    public Historial(int IDHistorial = 0,int IDCompra = 0,int IDUsuario =0,DateTime Fecha = new DateTime(), int IDLibro = 0){
+    public Historial(int IDHistorial = 0,int IDCompra = 0,int IDUsuario =0,DateTime Fecha = new DateTime(), string TituloLibro = " "){
         this.IDHistorial = IDHistorial;
         this.IDCompra = IDCompra;
         this.IDUsuario = IDUsuario;
         this.Fecha = Fecha;
-        this.IDLibro = IDLibro;
+        this.TituloLibro = TituloLibro;
     }
 }
