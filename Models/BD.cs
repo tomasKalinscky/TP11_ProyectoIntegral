@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost; DataBase=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-4PO6RUV\SQLEXPRESS02; DataBase=BDTP11;Trusted_Connection=True;";
     public static Usuario user = null;
     
     public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
