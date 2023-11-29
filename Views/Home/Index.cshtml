@@ -3,8 +3,9 @@
     <div class="row">
         @foreach (Libro item in ViewBag.Libros)
         {
-          <div class="col-md-4 col-12">
-            <div class="card" style="width: auto;">
+            @if(item.Stock > 0){
+              <div class="col-md-4 col-12">
+              <div class="card" style="width: auto;">
                 <div class="img-container">
                   <img src="@item.Imagen" class="card-img-top " alt="...">
                 </div>
@@ -17,7 +18,8 @@
                     </a>
                     </div>
                 </div>
-            </div>
+              </div>
+            }
         }
     </div>
 </div>
