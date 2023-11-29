@@ -1,6 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
+
 a.navbar-brand {
   white-space: normal;
   text-align: center;
@@ -21,6 +22,7 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+ 
 }
 
 .border-top {
@@ -45,4 +47,24 @@ button.accept-policy {
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+.custom-shape-divider-bottom-1701179513 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1701179513 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 67px;
+}
+
+.custom-shape-divider-bottom-1701179513 .shape-fill {
+  fill: #000000;
 }

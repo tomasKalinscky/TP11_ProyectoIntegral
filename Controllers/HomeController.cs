@@ -39,6 +39,16 @@ public class HomeController : Controller
     public IActionResult bibloteca(){
         return View();
     }
+        public IActionResult BuscarLibro(string loquepongaenelbuscador)
+    {
+
+        ViewBag.Libros = BD.BuscarLibro(loquepongaenelbuscador);
+        if(ViewBag.Libros.Count == 0)
+        {
+            ViewBag.error = $"No se a encontrado un libro que contega la palabra '{loquepongaenelbuscador}' ";
+        }
+        return View("librobuscado");
+    }
     public IActionResult Index()
     {
 
@@ -47,7 +57,10 @@ public class HomeController : Controller
     }
     public IActionResult ComprarLibro(int IDLibro){
         if (BD.user != null)
-        ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+        {
+            ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
+            ViewBag.Usuario = BD.user;
+        }
         else {
             return View("login");
         }
@@ -57,7 +70,28 @@ public class HomeController : Controller
         public IActionResult Olvide(){
         return View();
     }
-
+    public IActionResult AgregarLibro(){
+        if (BD.user != null){
+            return View();
+        }
+        else{
+            return View("login");
+        }
+        
+    }/*
+    [HttpPost] public IActionResult GuardarLibro(string Genero, DateTime FechaDePublicacion, int IDPartido, string Apellido, string Nombre, string Foto, string Postulacion) {
+    Libro lib = new Libro(IDCandidato, IDPartido, Apellido, Nombre, FechaNacimiento, Foto, Postulacion);
+    BD.AgregarLibro(lib);
+    return RedirectToAction("VerDetallePartido", new {IDPartido = can.IDPartido});
+}
+ <input type="text" name="Titulo" placeholder="Titulo" required>
+        <input type="text" name="Genero" placeholder="Genero" required>
+        <input type="date" name="FechaDePublicacion" required>
+        <input type="text" name="Imagen" placeholder="Link a la foto" required>
+        <input type="text" name="Autor" placeholder="nombre del autor" required>
+        <input type="text" name="Stock" placeholder="Ponga el stock a agregar" required>
+        <input type="text" name="Descripcion" placeholder="Ponga una breve descripcion"required>
+        <button type="sumbit">Agregar libro</button>*/
     public IActionResult Privacy()
     {
         return View();
@@ -72,8 +106,13 @@ public class HomeController : Controller
     { 
         return BD.DetalleLibro(IDLibro);
     }
+
+    
     public List<Historial> MostrarHistorialCompras(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }
-    
+    public List<MetodoPago> ElegirMetodoPago(){
+        return BD.ListarMetodoDePago();
+    }
+
 }
