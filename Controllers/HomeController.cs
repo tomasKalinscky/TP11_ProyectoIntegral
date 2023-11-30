@@ -60,6 +60,7 @@ public class HomeController : Controller
         ViewBag.compraExitosa = false;
         if (BD.user != null)
         {
+            ViewBag.MetodoPago = BD.ListarMetodoDePago();
             ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
             ViewBag.Usuario = BD.user;
         }
@@ -119,6 +120,7 @@ public class HomeController : Controller
         else {
             ViewBag.errorCompra = true;
         }
+        ViewBag.MetodoPago = BD.ListarMetodoDePago();
         ViewBag.InfoLibro = BD.DetalleLibro(com.FKLibro);
         ViewBag.Usuario = BD.user;
         return View("comprarLibro");

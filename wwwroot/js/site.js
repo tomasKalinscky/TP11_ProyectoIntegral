@@ -56,7 +56,7 @@ function MostrarHistorialCompras(IDS)
             }
     });
 }
-function ElegirMetodoPago(){
+/*function ElegirMetodoPago(){
     $.ajax({
         type:'GET',
         dataType: 'JSON',
@@ -69,7 +69,7 @@ function ElegirMetodoPago(){
                 let texto='';
                 for (const metodosDePago of response) 
                 {
-                    texto += `<input type="radio" name="FKMetodoDePago" value="metodosDePago.idMetodoPago" >${metodosDePago.metodoDePago}<br>`;
+                    texto += `<input type="radio" name="FKMetodoDePago" value="${metodosDePago.idMetodoPago}" required>${metodosDePago.metodoDePago} ${metodosDePago.idMetodoPago}<br> `;
                 }       
                 $("#infoPago").html(texto);
                 
@@ -82,7 +82,7 @@ function ElegirMetodoPago(){
             }
     });
 }
-
+*/
 
 
 /*  
