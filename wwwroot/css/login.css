@@ -116,8 +116,9 @@ html {
   
   /* Style error messages */
   .mensaje-error {
-      color: rgb(255, 255, 255);
+      color: rgb(255, 12, 12);
       font-size: 24px;
+      font-family: 'Poppins',serif;
       margin-bottom: 10px;
   }
   
@@ -261,9 +262,4 @@ html {
   }
   .foot-lnk{
       text-align:center;
-  }
-  .mensaje-error {
-      color: rgb(255, 255, 255);
-      font-size: 24px; 
-      margin-bottom: 10px;
   }

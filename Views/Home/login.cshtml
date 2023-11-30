@@ -22,7 +22,7 @@
 				<div class="group">
 					<label for="pass" class="label">Contraseña</label>
 					<input id="pass" name="contraseña" type="password" class="input" data-type="password">
-				</div>-
+				</div>	
 				<div class="group">
 					<input id="check" type="checkbox" class="check" checked>
 					<label for="check"><span class="icon"></span> Mantenerme registrado</label>
@@ -37,18 +37,18 @@
 				
 			</form>
 			
-			<form Action='@Url.Action("registro", "Account")' class="sign-up-htm" method="post">
+			<form Action='@Url.Action("registro", "Account")' class="sign-up-htm" method="post" onsubmit="return validarFormulario()">
 				<div class="group">
 					<label for="user" class="label">Nombre de usuario</label>
 					<input id="user" name="NombreUsuario" type="text" class="input">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">contraseña</label>
-					<input id="pass" name="contraseña" type="password" class="input" data-type="password">
+					<input id="Contrasena" name="contraseña" type="password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="pass" class="label">Repite la contraseña</label>
-					<input id="pass" name="repecontra" type="password" class="input" data-type="password">
+					<input id="Contrasena2" name="repecontra" type="password" class="input" data-type="password">
 				</div>
 				<div class="group">
 					<label for="email" class="label">Email (Opcional)</label>
@@ -58,6 +58,7 @@
 					<label for="telefono" class="label">Telefono (Opcional)</label>
 					<input id="telefono" name="telefono" type="text" class="input">
 				</div>
+				<p class="mensaje-error" id="mensajeError" style="color: red;"></p>
 				<div class="group">
 					<input type="submit" class="button" value="Registrarte">
 				</div>
