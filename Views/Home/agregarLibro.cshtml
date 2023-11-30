@@ -1,16 +1,17 @@
 <div class="body-agregarlibro">
-@{
-    ViewData["Title"] = "Agregar Libro";
-}
-   <h2>Agregar un Libro</h2>
-        <form class="formulario" action='@Url.Action("AgregarLibro")' method="post">
-            <input class="inputprimero" type="text" name="Titulo" placeholder="Titulo" required>
-            <input type="text" name="Genero" placeholder="Genero" required>
-            <input type="date" name="FechaDePublicacion" required>
-            <input type="text" name="Imagen" placeholder="Link a la foto" required>
-            <input type="text" name="Autor" placeholder="nombre del autor" required>
-            <input type="text" name="Stock" placeholder="Ponga el stock a agregar" required>
-            <input type="text" name="Descripcion" placeholder="Ponga una breve descripcion"required>
-            <button type="sumbit">Agregar libro</button>
-        </form>
+    @{
+        ViewData["Title"] = "Agregar Libro";
+    }
+    <h2>Agregar un Libro</h2>
+    <form class="formulario" action='@Url.Action("AgregarLibro")' method="post">
+        <input class="inputprimero" type="text" name="Titulo" placeholder="Título" required>
+        <input type="text" name="Genero" placeholder="Género" required>
+        <input type="date" name="FechaDePublicacion" required>
+        <input type="text" name="Imagen" placeholder="Enlace a la foto" required>
+        <input type="text" name="Autor" placeholder="Nombre del autor" required>
+        <input type="text" name="Stock" placeholder="Stock a agregar" required>
+        <textarea name="Descripcion" placeholder="Breve descripción" required></textarea>
+        <button type="submit">Agregar libro</button>
+    </form>
 </div>
+

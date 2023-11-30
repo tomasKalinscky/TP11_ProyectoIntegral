@@ -400,57 +400,75 @@ label {
   align-items: center;
 }
 
+.exito {
+  color: green;
+  font-weight: bold;
+}
 .comprarimg {
   border: 3px solid black;
-  width: 35%;
-  height: 35%;
+  width: 80%;
+  height: 80%;
 }
 .saberMasimg {
   width: 50%;
   height: 50%;
 }
-.body-agregarlibro
-{
+.body-agregarlibro {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
-.formulario
-{
+
+.formulario button {
+  background-color: #381e05;
+}
+
+.formulario {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 400px;
+  height: auto;
   width: 450px;
-  border: 3px solid rgb(255, 255, 255);
+  border: 3px solid #000000;
+  background-color: #f85e3e;
   backdrop-filter: blur(10px);
   font-size: x-large;
   border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.formulario input
-{
-  width: 400px;
+
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  background-color: #1d0f03;
+  color: whitesmoke;
 }
-.formulario button
-{
-  width: 400px;
-}
-.formulario button
-{
-  border-radius: 0 0 10px 10px;
-  border-style: none;
+
+.formulario button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
   transition-duration: 0.3s;
+  cursor: pointer;
 }
-.formulario .inputprimero
-{
+
+.formulario .inputprimero {
   border-radius: 10px 10px 0 0;
 }
-.formulario button:hover
-{
-  background-color:#f85e3e ;
-  color: white;
+
+.formulario button:hover {
+  background-color: #000000;
+  color: #f85e3e;
 }
+
 .custom-shape-divider-bottom-1701179513 {
   position: absolute;
   bottom: 0;

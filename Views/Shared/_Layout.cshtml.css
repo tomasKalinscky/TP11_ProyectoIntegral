@@ -25,6 +25,12 @@ a {
  
 }
 
+.offcanvas-body {
+float: left;
+display: flex;
+justify-content: left;
+}
+
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
