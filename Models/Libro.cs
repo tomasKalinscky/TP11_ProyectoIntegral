@@ -1,8 +1,8 @@
 namespace TP11_ProyectoIntegral.Models;
 public class Libro{
-    public int IDLibro {get; set;}
+    public int? IDLibro {get; set;}
     public string Titulo {get; set;}
-    public int FKGenero {get; set;}
+    public int? FKGenero {get; set;}
     public string Descripcion {get; set;}
     public DateTime FechaDePublicacion {get; set;}
     public int FKAutor {get; set;}
