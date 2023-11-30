@@ -7,7 +7,8 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=DESKTOP-4PO6RUV\SQLEXPRESS02; DataBase=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=LAPTOP-7OF0T9FP\SQLEXPRESS;Database=BDTP11;Trusted_Connection=True;";
+
     public static Usuario user = null;
     
     public static List<Libro> ListarLibrosYFiltros(int? IdAutor = null, int? IdGenero = null){
@@ -20,6 +21,24 @@ public static class BD
                     commandType: System.Data.CommandType.StoredProcedure).ToList();
         }
         return libros;
+    }
+
+    public static bool guardarCompra(DetalleCompra com){
+        int n;
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "INSERT INTO DetalleCompra (FKUsuario, FKLibro, Precio, FKMetodoDePago,FechaYHora) VALUES (@pUsuario, @pLibro, @pPrecio, @pMetodo, @pFecha)";
+            /*
+              this.IDCompra = IDCompra;
+        this.IDLibro = IDLibro;
+        this.IDUsuario = IDUsuario;
+        this.FechaYHora = FechaYHora;
+        this.FKMetodoPago = FKMetodoPago;
+        this.Precio = Precio;
+
+            */
+            n = db.Execute(sql, new {pUsuario = com.FKUsuario, pLibro = com.FKLibro, pPrecio=com.Precio, pMetodo = com.FKMetodoDePago, pFecha = com.FechaYHora});
+        }
+        return n != 0;
     }
     public static List<Libro> BuscarLibro(string loquepongaenelbuscador)
     {
