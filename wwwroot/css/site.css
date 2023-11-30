@@ -369,9 +369,6 @@ label {
   margin-bottom: 10px; /* Reduzco el espaciado entre el logo y otros elementos */
 }
 
-.navbar-nav {
-  text-align: center;
-}
 
 .navbar-nav .nav-item {
   margin-bottom: 5px; /* Reduzco el espaciado vertical entre elementos del menú */
