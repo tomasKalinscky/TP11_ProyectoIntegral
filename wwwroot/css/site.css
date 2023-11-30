@@ -357,7 +357,7 @@ label {
 }
 .bg-color
 {
-  background-color: #272727;
+  background-color: #272727 !important;
 }
 .offcanvas-body {
   padding: 10px; /* Ajusta el relleno según tus necesidades */
