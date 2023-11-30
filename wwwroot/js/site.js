@@ -35,7 +35,7 @@ function MostrarHistorialCompras(IDS)
         success:
             function (response){
                 console.log(response);
-                let texto="<p>";
+                let texto="<p> <br>";
                 if ((response.length)>0) {
                     response.forEach(element => {
                         texto = texto + "Fecha: "+element.fecha.substring(0,10)+" Titulo del libro: "+element.tituloLibro+"<br><br>";
