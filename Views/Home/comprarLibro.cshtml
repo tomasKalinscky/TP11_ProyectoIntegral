@@ -27,28 +27,30 @@
       <h4>@ViewBag.InfoLibro.NombreAutor</h4>
       <h4>@ViewBag.InfoLibro.Genero</h4>
       </div>
-  <div class="opciones">
-      <form method="post" action='@Url.Action("guardarCompra")'>
-        <input type="hidden" id="FKUsuario" name="FKUsuario" value="@ViewBag.Usuario.IDUsuario">
-        <input type="hidden" id="FKLibro" name="FKLibro" value="@ViewBag.InfoLibro.IDLibro">
-        <input type="hidden" id="Precio" name="Precio" value="@ViewBag.InfoLibro.Precio">
-        <!-- <input class="button" name="FKMetodoDePago" id="FKMetodoDePago" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPago" onclick="ElegirMetodoPago(@ViewBag.InfoLibro.Precio)" required>Eliga el metodo de pago-->
-        
-          <legend>Elija el metodo de pago</legend>
-            @foreach (MetodoPago mp in ViewBag.MetodoPago)
-            {
-              <div>
-                <input type="radio" class="btn-check" id="@mp.IDMetodoPago" name="FKMetodoDePago" value="@mp.IDMetodoPago" required autocomplete="off" checked>
-                <label class ="btn"for="@mp.IDMetodoPago">@mp.MetodoDePago</label>
-            </div>
-            }
-          
-            <input type="hidden" id="FechaYHora" name="FechaYHora" value="@DateTime.Now">
-            <input type="submit" class="button" value="Comprar">
-        </form>
-    </div>
-        
-  </div>
+
+      <div class="opciones">
+              <form class="formcompra" method="post" action='@Url.Action("guardarCompra")'>
+              <input type="hidden" id="FKUsuario" name="FKUsuario" value="@ViewBag.Usuario.IDUsuario">
+              <input type="hidden" id="FKLibro" name="FKLibro" value="@ViewBag.InfoLibro.IDLibro">
+              <input type="hidden" id="Precio" name="Precio" value="@ViewBag.InfoLibro.Precio">
+              <!-- <input class="button" name="FKMetodoDePago" id="FKMetodoDePago" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPago" onclick="ElegirMetodoPago(@ViewBag.InfoLibro.Precio)" required>Eliga el metodo de pago-->
+              
+                <legend class="tituloForm">Elija el metodo de pago</legend>
+                 <div class="border-color-type"> 
+                  @foreach (MetodoPago mp in ViewBag.MetodoPago)
+                  {
+                    <div>
+                      <input type="radio" class="btn-check" id="@mp.IDMetodoPago success-outlined" name="FKMetodoDePago" value="@mp.IDMetodoPago" required autocomplete="off" checked>
+                      <label class="btn btn-outline-success" for="@mp.IDMetodoPago success-outlined">@mp.MetodoDePago</label>
+                  </div>
+                  }
+                
+                  <input type="hidden" id="FechaYHora" name="FechaYHora" value="@DateTime.Now">
+                  </div>
+                  <input type="submit" class="button" value="Comprar">
+              </form>
+       </div>
+     </div>
   </div>
   <div class="modal fade" id="ModalPago" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

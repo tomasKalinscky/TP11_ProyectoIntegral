@@ -209,6 +209,7 @@ h5.card-title{
 }
 
 .informacion {
+  background-color: #585858c7;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -222,15 +223,29 @@ h5.card-title{
 }
 
 .opciones {
+  background-color: #585858c7;
+  border: 3px solid white;
+  border-radius: 25px;
+  padding-top: 127px;
+  padding-bottom: 127px;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: right;
+}
+.border-color-type
+{
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.formcompra
+{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  border: 3px solid white;
-  border-radius: 25px;
-  padding: 5px;
-  height: 600px;
-  float: right;
 }
 
 footer {
@@ -298,8 +313,6 @@ label {
   display: flex;
   align-items: center;
   width: 600px;
-  background-color: #585858c7;
-  border-radius: 50px;
   height: 600px;
 }
 .color-custom
