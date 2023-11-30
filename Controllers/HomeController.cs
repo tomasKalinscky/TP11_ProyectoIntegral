@@ -56,6 +56,8 @@ public class HomeController : Controller
         return View();
     }
     public IActionResult ComprarLibro(int IDLibro){
+        ViewBag.errorCompra = false;
+        ViewBag.compraExitosa = false;
         if (BD.user != null)
         {
             ViewBag.InfoLibro = BD.DetalleLibro(IDLibro);
@@ -107,7 +109,21 @@ public class HomeController : Controller
         return BD.DetalleLibro(IDLibro);
     }
 
-    
+    public IActionResult guardarCompra(DetalleCompra com) {
+        bool compraGuardada = BD.guardarCompra(com);
+        ViewBag.compraExitosa = false;
+        ViewBag.errorCompra = false;
+        if (compraGuardada) {
+            ViewBag.compraExitosa = true;
+        }
+        else {
+            ViewBag.errorCompra = true;
+        }
+        ViewBag.InfoLibro = BD.DetalleLibro(com.FKLibro);
+        ViewBag.Usuario = BD.user;
+        return View("comprarLibro");
+    }
+
     public List<Historial> MostrarHistorialCompras(int IDUsuario){
         return BD.ObtenerHistorial(IDUsuario);
     }

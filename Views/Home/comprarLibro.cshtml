@@ -1,15 +1,26 @@
+@{
+    ViewData["Title"] = "comprarLibro";
+}
+
 <div style="display:flex;text-align: center;
   align-items: center;
   justify-content: center;">
 <div class="DiseñoComprar">
-     <h1>@ViewBag.InfoLibro.Titulo</h1>
+  @if (@ViewBag.compraExitosa)
+  {
+    <h2>Compra realizada con exito</h2>
+  }
+  else if (@ViewBag.errorCompra){
+    <h2>La compra no se ha podido competar debido a un error</h2>
+  }
+    <h1>@ViewBag.InfoLibro.Titulo</h1>
     <h4>@ViewBag.InfoLibro.Descripcion</h4>
     <h4>@ViewBag.InfoLibro.FechaDePublicacion.Year / @ViewBag.InfoLibro.FechaDePublicacion.Month / @ViewBag.InfoLibro.FechaDePublicacion.Day</h4>
     <div class='sm'><img class='comprarimg' src="@ViewBag.InfoLibro.Imagen"></div>
     <h2>@ViewBag.InfoLibro.Precio</h2>
     <h4>@ViewBag.InfoLibro.NombreAutor</h4>
     <h4>@ViewBag.InfoLibro.Genero</h4>
-    <form method="post" action='@Url.Action("ComprarLibro")'>
+    <form method="post" action='@Url.Action("guardarCompra")'>
       <input type="hidden" id="FKUsuario" name="FKUsuario" value="@ViewBag.Usuario.IDUsuario">
       <input type="hidden" id="FKLibro" name="FKLibro" value="@ViewBag.InfoLibro.IDLibro">
       <input type="hidden" id="Precio" name="Precio" value="@ViewBag.InfoLibro.Precio">
