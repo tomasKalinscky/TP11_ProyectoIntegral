@@ -14,6 +14,10 @@ text,p,h1,h2,h3,h4,h5,h6{
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
+.nav-link{
+  display: flex;
+  align-items: center;
+}
 .card {
   min-height: 630px;
 }
@@ -168,6 +172,7 @@ body {
   background: radial-gradient( 100% 100% at 100% 0%, #f85e3e 0%, #f7920f 100% );
   box-shadow: 0px 0.01em 0.01em rgb(45 35 66 / 40%), 0px 0.3em 0.7em -0.01em rgb(45 35 66 / 30%), inset 0px -0.01em 0px rgb(58 65 111 / 50%);
   padding: 0 2em;
+  margin-top: auto !important;
   border-radius: 0.3em;
   color: #fff;
   height: 2.6em;
@@ -179,7 +184,6 @@ body {
   box-shadow: 0px 0.1em 0.2em rgb(45 35 66 / 40%), 0px 0.4em 0.7em -0.1em rgb(45 35 66 / 30%), inset 0px -0.1em 0px #f7920f;
   transform: translateY(-0.1em);
 }
-
 .button:active {
   box-shadow: inset 0px 0.1em 0.6em #f7920f;
   transform: translateY(0em);
@@ -194,7 +198,9 @@ body {
 }
 h5.card-title{
   color:white;
+  font-size: 140%;
   font-weight:bold ;
+  Font-family: Gill Sans, Gill Sans MT, Calibri, sans-serif;
 }
 .card img{
   height: 60%;
@@ -272,6 +278,7 @@ label {
 .color-custom
 {
     background-color: #f85e3e !important;
+    margin-right: 15px;
 }
 .div-expand
 {
@@ -306,6 +313,7 @@ label {
 .img-Logo
 {
   width: 200px;
+  transform: translateY(10%);
 }
 .bg-color
 {
@@ -408,6 +416,8 @@ body {
   border: none;
   background-color: #f85e3e;
   color: #212121;
+  width: 45px;
+  height: auto;
   padding: 8px;
   display: flex;
   align-items: center;
