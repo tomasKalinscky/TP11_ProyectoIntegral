@@ -17,9 +17,9 @@
       <!-- <h4>@ViewBag.InfoLibro.Descripcion</h4>-->
       <!-- <h4>@ViewBag.InfoLibro.FechaDePublicacion.Year / @ViewBag.InfoLibro.FechaDePublicacion.Month / @ViewBag.InfoLibro.FechaDePublicacion.Day</h4>-->
       <div class='sm'><img class='comprarimg' src="@ViewBag.InfoLibro.Imagen"></div>
-      <h2>Precio: @ViewBag.InfoLibro.Precio</h2>
-      <h4>@ViewBag.InfoLibro.NombreAutor</h4>
-      <h4>@ViewBag.InfoLibro.Genero</h4>
+      <h2 style="color: white;">Precio: $@ViewBag.InfoLibro.Precio</h2>
+      <h4 style="color: white;">@ViewBag.InfoLibro.NombreAutor</h4>
+      <h4 style="color: white;">@ViewBag.InfoLibro.Genero</h4>
       </div>
 
       <div class="opciones">
@@ -32,17 +32,18 @@
     }
               <form class="formcompra" method="post" action='@Url.Action("guardarCompra")'>
               <input type="hidden" id="FKUsuario" name="FKUsuario" value="@ViewBag.Usuario.IDUsuario">
+
               <input type="hidden" id="FKLibro" name="FKLibro" value="@ViewBag.InfoLibro.IDLibro">
               <input type="hidden" id="Precio" name="Precio" value="@ViewBag.InfoLibro.Precio">
               <!-- <input class="button" name="FKMetodoDePago" id="FKMetodoDePago" type="button" style="margin: 3px" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalPago" onclick="ElegirMetodoPago(@ViewBag.InfoLibro.Precio)" required>Eliga el metodo de pago-->
               
-                <legend class="tituloForm">Elija el metodo de pago</legend>
+                <legend class="tituloForm" style="color: white;">Elija el metodo de pago</legend>
                  <div class="border-color-type"> 
                   @foreach (MetodoPago mp in ViewBag.MetodoPago)
                   {
                     <div>
                       <input type="radio" class="btn-check" id="@mp.IDMetodoPago success-outlined" name="FKMetodoDePago" value="@mp.IDMetodoPago" required autocomplete="off" checked>
-                      <label class="btn btn-outline-success" for="@mp.IDMetodoPago success-outlined">@mp.MetodoDePago</label>
+                      <label class="btn btn-outline-success" style="height: 10%; width: 100%;" for="@mp.IDMetodoPago success-outlined">@mp.MetodoDePago</label>
                   </div>
                   }
                 
