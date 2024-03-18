@@ -8,6 +8,7 @@
         success:
             function (response){
                 console.log(response);
+                console.log(response.genero);
                 $("#TituloLibro").html("Detalle del libro: " + response.titulo);
                 let texto = "<div class='sm'><img src='" + response.imagen + "' class='saberMasimg'></div><br>";
                 texto+= `<p>Genero: ${response.genero}<br>`;
