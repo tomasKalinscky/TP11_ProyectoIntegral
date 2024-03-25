@@ -18,7 +18,6 @@ public class HomeController : Controller
         return View("login");
     }
     public IActionResult login(bool user=false){
-        
         ViewBag.usuarioEstaMal = user;
         return View();
     }

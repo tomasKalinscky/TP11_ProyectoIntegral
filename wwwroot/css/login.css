@@ -126,14 +126,14 @@ html {
       width:100%;
       margin:auto;
       max-width:550px;
-      min-height:705px;
+      min-height:905px;
       position:relative;
       background:url(https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bGlicmFyeXxlbnwwfHwwfHx8MA%3D%3D) no-repeat center;
       box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
   }
   .login-html{
       width:100%;
-      height:100%;
+      height:130%;
       position:absolute;
       padding:90px 70px 50px 70px;
       background:rgba(0, 0, 0, 0.75);

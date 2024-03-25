@@ -90,8 +90,8 @@ public static class BD
     public static bool RegistrarUsuario(Usuario us){
         int n;
         using (SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "INSERT INTO Usuario (NombreUsuario, Contraseña, Gmail, Telefono) VALUES (@pusername, @pcontraseña, @pemail, @ptelefono)";
-            n = db.Execute(sql, new {pusername = us.NombreUsuario, pcontraseña = us.Contraseña, pemail = us.Gmail, ptelefono = us.Telefono});
+            string sql = "INSERT INTO Usuario (NombreUsuario, Contraseña, Genero, Edad, Gmail, Telefono) VALUES (@pusername, @pcontraseña ,@pgenero, @pedad, @pemail, @ptelefono)";
+            n = db.Execute(sql, new {pusername = us.NombreUsuario, pcontraseña = us.Contraseña,pGenero = us.Genero, pedad = us.Edad, pemail = us.Gmail, ptelefono = us.Telefono});
         }
         return n != 0;
     }
