@@ -301,9 +301,12 @@ footer div a {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  background-color: #000000;
+text-align: center;
+  color: white;
+
 }
 
 #profile-info {
@@ -383,19 +386,24 @@ label {
 
 .le-color {
   width: min-content;
+  border: 2px solid #f85e3e ;
   border-radius: 25px;
-  color: white !important;
+  color: #f8775c !important;
   transition-duration: 0.5s;
   padding: 8px 15px; /* Ajusta el relleno para que sea más compacto */
   display: block;
 }
 
 .le-color:hover {
-  background-color: white;
+  background-color: #f85e3e;
   color: #000000 !important;
 }
 *:focus {
   outline: none;
+}
+
+.kali{
+  margin-left: 10px;
 }
 
 .sm {
@@ -501,7 +509,7 @@ body {
   border: none;
   background-color: #f85e3e;
   color: #212121;
-  width: 45px;
+  width: 65px;
   height: auto;
   padding: 8px;
   display: flex;
