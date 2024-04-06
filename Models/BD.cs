@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost;Database=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01;Database=BDTP11;Trusted_Connection=True;";
 
     public static Usuario user = null;
     
