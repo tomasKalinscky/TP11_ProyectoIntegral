@@ -82,7 +82,7 @@ public static class BD
         List<Libro> libros = new List<Libro>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Libro WHERE Titulo LIKE '%' + @pTitulo + '%' OR FKGenero IN (SELECT IDGenero FROM Genero WHERE LOWER(nombre) = LOWER(@pTitulo)) OR FKAutor IN (SELECT IDAutor FROM Autor WHERE LOWER(nombre) = LOWER(@pTitulo))";
+            string sql = "SELECT * FROM Libro WHERE Titulo LIKE '%' + @pTitulo + '%' OR FKGenero IN (SELECT IDGenero FROM Genero WHERE LOWER(nombre) LIKE '%' + LOWER(@pTitulo) + '%') OR FKAutor IN (SELECT IDAutor FROM Autor WHERE LOWER(nombre) LIKE '%' + LOWER(@pTitulo) + '%')";
             libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
         }
         return libros;
