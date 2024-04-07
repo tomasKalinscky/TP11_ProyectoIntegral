@@ -1,4 +1,30 @@
-﻿function MostrarInfoLibro(IDS)
+﻿/*function toggleColor() {
+    var boton = document.getElementById("miBoton");
+    var estadoInput = document.getElementById("estadoBoton");
+  
+    if (boton.classList.contains("presionado")) {
+      boton.classList.remove("presionado");
+      estadoInput.value = "false";
+    } else {
+      boton.classList.add("presionado");
+      estadoInput.value = "true";
+    }
+  }
+  */
+  function toggleColor() {
+    var boton = $("#miBoton");
+    var estadoInput = $("#estadoBoton");
+
+    if (boton.hasClass("presionado")) {
+        boton.removeClass("presionado");
+        estadoInput.val("false");
+    } else {
+        boton.addClass("presionado");
+        estadoInput.val("true"); // Cambiado a true
+    }
+}
+  
+function MostrarInfoLibro(IDS)
 {
     $.ajax({
         type:'GET',
