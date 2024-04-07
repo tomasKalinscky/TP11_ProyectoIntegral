@@ -25,6 +25,11 @@ html {
   position: relative;
   min-height: 100%;
 }
+body
+{
+  font-family: 'Poppins',serif !important;
+}
+
 .bookmarkBtn {
   width: 100px;
   height: 40px;
@@ -163,7 +168,7 @@ body {
 }
 
 .button {
-  font-size: 18px;
+  font-size: 17px;
   display: inline-block;
   outline: 0;
   border: 0;
@@ -207,6 +212,49 @@ h5.card-title{
   max-height: 470px;
   border-radius: 7px;
 }
+.informacion h1{
+  color: white;
+}
+.informacion {
+  background-color: #292929c7;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 25px;
+  float: left;
+  height: 700px;
+  margin: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.opciones {
+  background-color: #353535c7;
+  border: 3px solid white;
+  border-radius: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  float: right;
+}
+.border-color-type
+{
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.formcompra
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
 footer {
   background-color: #272727b6;;
   border-top: 3px solid #000000;
@@ -253,9 +301,12 @@ footer div a {
   max-width: 600px;
   margin: 50px auto;
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f8f8f8;
+  border: 1px solid #000000;
+  border-radius: 40px;
+  background-color: #000000;
+text-align: center;
+  color: white;
+
 }
 
 #profile-info {
@@ -268,12 +319,11 @@ label {
   margin-bottom: 5px;
 }
 .DiseñoComprar{
-  width: 80%;
-  background-color: #585858c7;
-  text-align: center;
+  margin: 8em;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  height: 30%;
+  width: 600px;
+  height: 600px;
 }
 .color-custom
 {
@@ -317,7 +367,7 @@ label {
 }
 .bg-color
 {
-  background-color: #272727;
+  background-color: #272727 !important;
 }
 .offcanvas-body {
   padding: 10px; /* Ajusta el relleno según tus necesidades */
@@ -329,9 +379,6 @@ label {
   margin-bottom: 10px; /* Reduzco el espaciado entre el logo y otros elementos */
 }
 
-.navbar-nav {
-  text-align: center;
-}
 
 .navbar-nav .nav-item {
   margin-bottom: 5px; /* Reduzco el espaciado vertical entre elementos del menú */
@@ -339,19 +386,24 @@ label {
 
 .le-color {
   width: min-content;
+  border: 2px solid #f85e3e ;
   border-radius: 25px;
-  color: white !important;
+  color: #f8775c !important;
   transition-duration: 0.5s;
   padding: 8px 15px; /* Ajusta el relleno para que sea más compacto */
   display: block;
 }
 
 .le-color:hover {
-  background-color: white;
+  background-color: #f85e3e;
   color: #000000 !important;
 }
 *:focus {
   outline: none;
+}
+
+.kali{
+  margin-left: 10px;
 }
 
 .sm {
@@ -360,30 +412,71 @@ label {
   align-items: center;
 }
 
+.exito {
+  color: green;
+  font-weight: bold;
+}
 .comprarimg {
   border: 3px solid black;
-  width: 35%;
-  height: 35%;
+  width: 80%;
+  height: 80%;
 }
 .saberMasimg {
   width: 50%;
   height: 50%;
 }
-.agregarCandidato {
-  width: 100%;
-  height: auto;
-  justify-content: center;
-  text-align: center;
+.body-agregarlibro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-.agregarCandidato img {
-width: 40%;
-height: auto;
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 450px;
+  border: 3px solid #000000;
+  background-color: #f85e3e;
+  backdrop-filter: blur(10px);
+  font-size: x-large;
+  border-radius: 25px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.form-AgregarCandidato{
+
+.formulario input,
+.formulario textarea {
   width: 100%;
-  height: -50%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #1d0f03;
+  color: whitesmoke;
 }
+
+.formulario button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  transition-duration: 0.3s;
+  cursor: pointer;
+}
+
+.formulario .inputprimero {
+  border-radius: 10px 10px 0 0;
+}
+
+.formulario button:hover {
+  background-color: #000000;
+  color: #f85e3e;
+}
+
 .custom-shape-divider-bottom-1701179513 {
   position: absolute;
   bottom: 0;
@@ -416,7 +509,7 @@ body {
   border: none;
   background-color: #f85e3e;
   color: #212121;
-  width: 45px;
+  width: 65px;
   height: auto;
   padding: 8px;
   display: flex;
@@ -482,4 +575,10 @@ body {
   100% {
     transform: translate(0%, 0%);
   }
+}
+
+input[type="radio"]
+{
+  display: block;
+  list-style: none;
 }

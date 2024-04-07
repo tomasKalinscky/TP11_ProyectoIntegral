@@ -22,20 +22,57 @@ public static class BD
         }
         return libros;
     }
-
+    public static int BuscarIDAutor(string nombreAutor){
+        int devolver = -1;
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IDAutor FROM Autor where nombre = @pnombreActor ";
+            devolver = db.QueryFirstOrDefault<int>(sql, new {pnombreActor = nombreAutor});
+        }
+        if (devolver == -1 || devolver== 0)
+        {
+            string Biografia = "Autor nuevo";
+            using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "INSERT INTO Autor (Nombre,Biografia) VALUES (@pNombre,@pBiografia)";
+            db.Execute(sql, new {pNombre = nombreAutor,pBiografia = Biografia});
+            }
+            using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IDAutor FROM Autor where nombre = @pnombreActor ";
+            devolver = db.QueryFirstOrDefault<int>(sql, new {pnombreActor = nombreAutor});
+        }
+        }
+        return devolver;
+    }
+    public static int BuscarIDGenero(string nombreGenero){
+        int devolver = -1;
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IDGenero FROM Genero where nombre = @pnombreGenero ";
+            devolver = db.QueryFirstOrDefault<int>(sql, new {pnombreGenero = nombreGenero});
+        }
+        if (devolver == 0 || devolver == -1)
+        {
+            using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "INSERT INTO Genero (Nombre) VALUES (@pNombre)";
+            db.Execute(sql, new {pNombre = nombreGenero});
+            }
+            using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT IDGenero FROM Genero where nombre = @pnombreGenero ";
+            devolver = db.QueryFirstOrDefault<int>(sql, new {pnombreGenero = nombreGenero});
+        }
+        }
+        return devolver;
+    }
+    public static bool AgregarLibro(string Titulo,int FKGenero,string Descripcion,DateTime FechaDePublicacion,int FKAutor,int Stock,string Imagen,float Precio){
+        int n;
+        using (SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "INSERT INTO Libro (Titulo, FKGenero, Descripcion, FechaDePublicacion,FKAutor,Stock,Imagen,Precio) VALUES (@pTitulo,@pFKGenero,@pDescripcion,@pFechaDepublicacion,@pFKAutor,@pStock,@pImagen,@pPrecio)";
+            n = db.Execute(sql, new {pTitulo = Titulo, pFKGenero = FKGenero, pDescripcion=Descripcion, pFechaDePublicacion =FechaDePublicacion, pFKAutor = FKAutor,pStock = Stock, pImagen = Imagen, pPrecio = Precio});
+        }
+        return n != 0;
+    }
     public static bool guardarCompra(DetalleCompra com){
         int n;
         using (SqlConnection db = new SqlConnection(_connectionString)){
             string sql = "INSERT INTO DetalleCompra (FKUsuario, FKLibro, Precio, FKMetodoDePago,FechaYHora) VALUES (@pUsuario, @pLibro, @pPrecio, @pMetodo, @pFecha)";
-            /*
-              this.IDCompra = IDCompra;
-        this.IDLibro = IDLibro;
-        this.IDUsuario = IDUsuario;
-        this.FechaYHora = FechaYHora;
-        this.FKMetodoPago = FKMetodoPago;
-        this.Precio = Precio;
-
-            */
             n = db.Execute(sql, new {pUsuario = com.FKUsuario, pLibro = com.FKLibro, pPrecio=com.Precio, pMetodo = com.FKMetodoDePago, pFecha = com.FechaYHora});
         }
         return n != 0;
@@ -45,7 +82,7 @@ public static class BD
         List<Libro> libros = new List<Libro>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%'";
+            string sql = "SELECT * FROM Libro WHERE Titulo LIKE '%' + @pTitulo + '%' OR FKGenero IN (SELECT IDGenero FROM Genero WHERE LOWER(nombre) = LOWER(@pTitulo)) OR FKAutor IN (SELECT IDAutor FROM Autor WHERE LOWER(nombre) = LOWER(@pTitulo))";
             libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
         }
         return libros;
@@ -53,8 +90,8 @@ public static class BD
     public static bool RegistrarUsuario(Usuario us){
         int n;
         using (SqlConnection db = new SqlConnection(_connectionString)){
-            string sql = "INSERT INTO Usuario (NombreUsuario, Contraseña, Gmail, Telefono) VALUES (@pusername, @pcontraseña, @pemail, @ptelefono)";
-            n = db.Execute(sql, new {pusername = us.NombreUsuario, pcontraseña = us.Contraseña, pemail = us.Gmail, ptelefono = us.Telefono});
+            string sql = "INSERT INTO Usuario (NombreUsuario, Contraseña, Genero, Edad, Gmail, Telefono) VALUES (@pusername, @pcontraseña ,@pgenero, @pedad, @pemail, @ptelefono)";
+            n = db.Execute(sql, new {pusername = us.NombreUsuario, pcontraseña = us.Contraseña,pGenero = us.Genero, pedad = us.Edad, pemail = us.Gmail, ptelefono = us.Telefono});
         }
         return n != 0;
     }

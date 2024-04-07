@@ -19,7 +19,7 @@
 	Where IDLibro = @idlibro;
 	End
 
-	Alter Procedure SP_DetalleCompra
+	Create Procedure SP_DetalleCompra
 	@pfklibro int,
 	@pprecio int,
 	@fecha datetime,
@@ -27,10 +27,10 @@
 	@pusuario int
 	AS
 	Begin
-	Insert into DetalleCompra (FKLibro,Precio,FechaYHora,MetodoDePago,FKUsuario) values (@pfklibro,@pprecio,@fecha,@metodopago,@pusuario);
+	Insert into DetalleCompra (FKLibro,Precio,FechaYHora,FKMetodoDePago,FKUsuario) values (@pfklibro,@pprecio,@fecha,@metodopago,@pusuario);
 	End
 
-	/*Exec Sp_DetalleCompra 1,1400,'10-10-2023 10:00:00',2,2*/
+	Exec Sp_DetalleCompra 12,1400,'10-10-2023 10:00:00',2,2
 
 	Create Trigger TR_HistorialCompra
 	On DetalleCompra After Insert

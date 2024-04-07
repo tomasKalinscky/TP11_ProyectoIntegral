@@ -8,6 +8,7 @@
         success:
             function (response){
                 console.log(response);
+                console.log(response.genero);
                 $("#TituloLibro").html("Detalle del libro: " + response.titulo);
                 let texto = "<div class='sm'><img src='" + response.imagen + "' class='saberMasimg'></div><br>";
                 texto+= `<p>Genero: ${response.genero}<br>`;
@@ -35,7 +36,7 @@ function MostrarHistorialCompras(IDS)
         success:
             function (response){
                 console.log(response);
-                let texto="<p>";
+                let texto="<p> <br>";
                 if ((response.length)>0) {
                     response.forEach(element => {
                         texto = texto + "Fecha: "+element.fecha.substring(0,10)+" Titulo del libro: "+element.tituloLibro+"<br><br>";
@@ -56,7 +57,7 @@ function MostrarHistorialCompras(IDS)
             }
     });
 }
-function ElegirMetodoPago(){
+/*function ElegirMetodoPago(){
     $.ajax({
         type:'GET',
         dataType: 'JSON',
@@ -69,7 +70,7 @@ function ElegirMetodoPago(){
                 let texto='';
                 for (const metodosDePago of response) 
                 {
-                    texto += `<input type="radio" name="FKMetodoDePago" value="metodosDePago.idMetodoPago" >${metodosDePago.metodoDePago}<br>`;
+                    texto += `<input type="radio" name="FKMetodoDePago" value="${metodosDePago.idMetodoPago}" required>${metodosDePago.metodoDePago} ${metodosDePago.idMetodoPago}<br> `;
                 }       
                 $("#infoPago").html(texto);
                 
@@ -82,7 +83,7 @@ function ElegirMetodoPago(){
             }
     });
 }
-
+*/
 
 
 /*  
@@ -92,3 +93,26 @@ function ElegirMetodoPago(){
     <input type="radio" name="FKMetodoDePago">MercadoPago QR
     <input type="radio" name="FKMetodoDePago">MercadoPago Transferencia
   </form>*/ 
+  function validarFormulario() {
+    let password = document.getElementById("Contrasena").value;
+    let confirmPassword = document.getElementById("Contrasena2").value;
+  
+    var caracterEspecial = /[$&+,:;=?@#|'<>.^*()%!-]/.test(password);
+  
+    /*if (!caracterEspecial) {
+        document.getElementById("mensajeError").innerHTML = "La contraseña debe contener al menos un carácter especial.";
+        return false;
+    } */
+  
+    if (password.length < 8) {
+        document.getElementById("mensajeError").innerHTML = "La contraseña debe tener al menos 8 caracteres.";
+        return false;
+    }
+  
+    if (confirmPassword !== password) {
+        document.getElementById("mensajeError").innerHTML = "Las contraseñas no coinciden. Por favor, inténtelo de nuevo.";
+        document.getElementById("Contrasena2").value = "";
+        return false;
+    }
+    return true;
+  }
