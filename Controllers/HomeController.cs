@@ -38,10 +38,10 @@ public class HomeController : Controller
     public IActionResult bibloteca(){
         return View();
     }
-        public IActionResult BuscarLibro(string loquepongaenelbuscador)
+        public IActionResult BuscarLibro(string loquepongaenelbuscador,bool estadoBoton)
     {
 
-        ViewBag.Libros = BD.BuscarLibro(loquepongaenelbuscador);
+        ViewBag.Libros = BD.BuscarLibro(loquepongaenelbuscador, estadoBoton);
         if(ViewBag.Libros.Count == 0)
         {
             ViewBag.error = $"No se a encontrado un libro que contenga '{loquepongaenelbuscador}' ";

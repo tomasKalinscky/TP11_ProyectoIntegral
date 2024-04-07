@@ -4,6 +4,19 @@ header
 {
   font-family: 'Poppins',serif !important;
 }
+#miBoton {
+  background-color: #3498db; /* Color normal */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#miBoton.presionado {
+  background-color: #e67e22; /* Color anaranjado */
+}
+
 
 a.navbar-brand {
   white-space: normal;
