@@ -431,10 +431,28 @@ label {
   width: 80%;
   height: 80%;
 }
+
+.saberMas {
+  background-color: black;
+  color: white;
+}
+
+.saberMasHeader {
+  background-color: #f85e3e;
+  border-bottom: 0px !important;
+}
+
 .saberMasimg {
   width: 50%;
   height: 50%;
 }
+
+
+.saberMasFooter {
+  background-color: #f85e3e;
+}
+
+
 .body-agregarlibro {
   display: flex;
   flex-direction: column;
