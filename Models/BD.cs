@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=DESKTOP-4PO6RUV\SQLEXPRESS02;Database=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01;Database=BDTP11;Trusted_Connection=True;";
 
     public static Usuario user = null;
     
@@ -77,14 +77,14 @@ public static class BD
         }
         return n != 0;
     }
-    public static List<Libro> BuscarLibro(string loquepongaenelbuscador, bool estadoBoton)
+    public static List<Libro> BuscarLibro(string loquepongaenelbuscador, string estadoBoton)
     {
         List<Libro> libros = new List<Libro>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql;
-            if (estadoBoton){
-                sql = "Select * From Libro Where FKGenero = (select IDGenero from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') or FKAutor = (select IDAutor from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') ";
+            if (estadoBoton == "false"){
+                sql = "Select * From Libro Where FKGenero = (select IDGenero from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') or FKAutor = (select IDAutor from Autor where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') ";
             }
             else{
                 sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%'";

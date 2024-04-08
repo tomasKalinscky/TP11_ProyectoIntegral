@@ -38,7 +38,7 @@ public class HomeController : Controller
     public IActionResult bibloteca(){
         return View();
     }
-        public IActionResult BuscarLibro(string loquepongaenelbuscador,bool estadoBoton)
+        public IActionResult BuscarLibro(string loquepongaenelbuscador,string estadoBoton)
     {
 
         ViewBag.Libros = BD.BuscarLibro(loquepongaenelbuscador, estadoBoton);

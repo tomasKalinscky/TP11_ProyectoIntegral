@@ -12,15 +12,16 @@
   }
   */
   function toggleColor() {
-    var boton = $("#miBoton");
-    var estadoInput = $("#estadoBoton");
-
-    if (boton.hasClass("presionado")) {
-        boton.removeClass("presionado");
-        estadoInput.val("false");
-    } else {
-        boton.addClass("presionado");
-        estadoInput.val("true"); // Cambiado a true
+    let aux = document.getElementById("estadoBoton").value;
+    if(aux == "false")
+    {
+        document.getElementById("estadoBoton").value = "true";
+        console.log(document.getElementById("estadoBoton").value);
+    }
+    else
+    {
+        document.getElementById("estadoBoton").value = "false";
+        console.log(document.getElementById("estadoBoton").value);
     }
 }
   
