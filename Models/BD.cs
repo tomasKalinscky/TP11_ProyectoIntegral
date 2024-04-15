@@ -101,7 +101,7 @@ public static class BD
         }
         return n != 0;
     }
-    public static bool Login(string username, string contraseña){
+     public static bool Login(string username, string contraseña){
         Usuario broder;
         using (SqlConnection db = new SqlConnection(_connectionString)){
             string sql = "SELECT * FROM Usuario where NombreUsuario = @pusername AND Contraseña = @pcontraseña";
