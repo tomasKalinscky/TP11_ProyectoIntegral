@@ -77,18 +77,13 @@ public static class BD
         }
         return n != 0;
     }
-    public static List<Libro> BuscarLibro(string loquepongaenelbuscador, string estadoBoton)
+    public static List<Libro> BuscarLibro(string loquepongaenelbuscador)
     {
         List<Libro> libros = new List<Libro>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql;
-            if (estadoBoton == "false"){
-                sql = "Select * From Libro Where FKGenero = (select IDGenero from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') or FKAutor = (select IDAutor from Autor where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') ";
-            }
-            else{
-                sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%'";
-            }
+            sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%' or FKGenero = (select IDGenero from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') or FKAutor = (select IDAutor from Autor where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') ";
             libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
         }
         return libros;
