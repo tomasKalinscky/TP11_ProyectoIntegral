@@ -63,17 +63,19 @@ function MostrarHistorialCompras(IDS)
         success:
             function (response){
                 console.log(response);
-                let texto="<p> <br>";
+                let texto='<table class="table"><thead><tr><th scope="col">#</th><th scope="col">Titulo</th><th scope="col">Fecha de compra</th></tr></thead><tbody>';
+                let aux = 1;
                 if ((response.length)>0) {
                     response.forEach(element => {
-                        texto = texto + "Fecha: "+element.fecha.substring(0,10)+" Titulo del libro: "+element.tituloLibro+"<br><br>";
+                        texto = texto +`<tr><th scope="row">${aux}</th><td>${element.titulo}</td><td>${element.fecha.substring(0,10)}</td></tr>`;
+                        aux++;
                     });
                 }
                 else{
                     texto=texto + "No tiene ninguna compra todavia";
                 }
                
-                texto= texto + "</p>";
+                texto= texto + "</tbody></table>";
                 $("#infoHistorial").html(texto);
             },
             error : function(xhr,status){
@@ -84,6 +86,50 @@ function MostrarHistorialCompras(IDS)
             }
     });
 }
+
+/*
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+*/
+
+
+
+
+
+
+
+
+
+
 /*function ElegirMetodoPago(){
     $.ajax({
         type:'GET',

@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=localhost;Database=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=DESKTOP-E3OHN6P\SQLEXPRESS01;Database=BDTP11;Trusted_Connection=True;";
 
     public static Usuario user = null;
     
@@ -145,7 +145,7 @@ public static class BD
         List<Historial> historial = new List<Historial>();
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "Select * From Historial Where IDUsuario = @pIDUsuario";
+            string sql = "select H.Fecha,L.Titulo from Historial H inner join Libro L on L.IDLibro = H.FKLibro where IDUsuario = @pIDUsuario";
             historial = db.Query<Historial>(sql, new{pIDUsuario = IDUsuario}).ToList();  
         }
         return historial;
