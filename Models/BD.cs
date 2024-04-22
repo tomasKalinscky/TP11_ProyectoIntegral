@@ -7,7 +7,7 @@ namespace TP11_ProyectoIntegral.Models;
 
 public static class BD
 {
-    private static string _connectionString = @"Server=DESKTOP-4PO6RUV\SQLEXPRESS02;Database=BDTP11;Trusted_Connection=True;";
+    private static string _connectionString = @"Server=localhost;Database=BDTP11;Trusted_Connection=True;";
 
     public static Usuario user = null;
     
@@ -83,7 +83,7 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql;
-            sql = "Select * From Libro Where Titulo Like '%' + @pTitulo +'%' or FKGenero = (select IDGenero from Genero where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') or FKAutor = (select IDAutor from Autor where LOWER(nombre) LIKE '%'+ LOWER(@pTitulo)+'%') ";
+            sql = "SELECT * FROM Libro WHERE Titulo LIKE '%' + @pTitulo + '%' OR FKGenero IN (SELECT IDGenero FROM Genero WHERE LOWER(nombre) LIKE '%' + LOWER(@pTitulo) + '%') OR FKAutor IN (SELECT IDAutor FROM Autor WHERE LOWER(nombre) LIKE '%' + LOWER(@pTitulo) + '%')";
             libros = db.Query<Libro>(sql, new {pTitulo = loquepongaenelbuscador}).ToList();
         }
         return libros;
