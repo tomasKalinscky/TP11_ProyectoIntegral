@@ -41,7 +41,7 @@ function MostrarInfoLibro(IDS)
                 texto+= `<p>Genero: ${response.genero}<br>`;
                 texto+= "Autor: " + response.nombreAutor+ "<br>";
                 texto+= "Sintesis: " + response.descripcion + "<br>";
-                texto+= "Fecha de publicacion: " + response.fechaDePublicacion.substring(0,10)+ "<br>";
+                texto+= "Fecha de publicacion: " +response.fechaDePublicacion.substring(8,10)+'-'+response.fechaDePublicacion.substring(5,8)+ response.fechaDePublicacion.substring(0,4)+ "<br>";
                 texto+= "Stock actual: " + response.stock+ "<p>";
                 $("#infoLibro").html(texto);
             },
@@ -67,7 +67,7 @@ function MostrarHistorialCompras(IDS)
                 let aux = 1;
                 if ((response.length)>0) {
                     response.forEach(element => {
-                        texto = texto +`<tr><th scope="row">${aux}</th><td>${element.titulo}</td><td>${element.fecha.substring(0,10)}</td></tr>`;
+                        texto = texto +`<tr><th scope="row">${aux}</th><td>${element.titulo}</td><td>${element.fecha.substring(8,10)+'-'+element.fecha.substring(5,8)+ element.fecha.substring(0,4)}</td></tr>`;
                         aux++;
                     });
                 }
